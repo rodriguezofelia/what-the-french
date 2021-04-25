@@ -41,10 +41,10 @@ class Quiz(db.Model):
 
     quiz_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     quiz_name = db.Column(db.Text, nullable=False)
-    verb_id = db.Column(db.Integer, db.ForeignKey('DOESNT EXIST YET'), nullable=False)
+    verb_id = db.Column(db.Integer, db.ForeignKey('verb.verb_id'), nullable=False)
     tense_id = db.Column(db.Integer, db.ForeignKey('DOESNT EXIST YET'), nullable=False)
 
-    verb = db.relationship('DOESNT EXIST YET', backref='quizzes')
+    verb = db.relationship('Verb', backref='quizzes')
     temse = db.relatinoship('DOESNT EXIST YET', backref='quizzes')
 
 
