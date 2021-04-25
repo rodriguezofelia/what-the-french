@@ -77,3 +77,18 @@ class Tense(db.Model):
 
     tense_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     tense = db.Column(db.Text, nullable=False)
+
+
+class Conjugated_Verb(db.Model): 
+    """Correct conjugation of verbs."""
+
+    __tablename__ = "conjugated_verbs"
+
+    conjugated_verb_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
+    conjugated_verb = db.Column(db.Text, nullable=False)
+    verb_id = db.Column(db.Integer, db.ForeignKey('verbs.verb_id'), nullable=False)
+    tense_id = db.Column(db.Integer, db.ForeignKey('tenses.tense_id'), nullable=False)
+    subject_pronoun = db.Column(db.Text, nullable=False)
+
+    verb = db.relationship('Verb', backref='conjugated_verbs')
+    tense = db.relatinoship('Tense', backref='conjugated_verbs')
