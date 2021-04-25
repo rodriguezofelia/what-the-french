@@ -92,3 +92,15 @@ class Conjugated_Verb(db.Model):
 
     verb = db.relationship('Verb', backref='conjugated_verbs')
     tense = db.relatinoship('Tense', backref='conjugated_verbs')
+
+
+class Sentence(db.Model): 
+    """Sentences that the User gets answer in Quiz_Sentences."""
+
+    __tablename__ = "sentences"
+
+    sentence_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
+    blank_word_sentence = db.Column(db.Text, nullable=False)
+    conjugated_verb_id = db.Column(db.Integer, db.ForeignKey('conjugated_verbs.conjugated_verb_id'), nullable=False)
+
+    conjugated_verb_id = db.relationship('Sentence', backref='sentences')
