@@ -47,4 +47,16 @@ class Quiz(db.Model):
     verb = db.relationship('DOESNT EXIST YET', backref='quizzes')
     temse = db.relatinoship('DOESNT EXIST YET', backref='quizzes')
 
-    
+
+class Quiz_Sentence(db.Model):
+    """Sentences that make up each Quiz."""
+
+    __tablename__ = "quiz_sentences"
+
+    quiz_sentence_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
+    quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
+    sentence_id = db.Column(db.Integer, db.ForeignKye('DOESNT EXIST YET'), nullable=False)
+
+    quiz = db.relationship('Quiz', backref='quiz_sentences')
+    sentence = db.relationship('DOESNT EXIST YET', backref='quiz_sentences')
+
