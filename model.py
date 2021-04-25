@@ -60,3 +60,12 @@ class Quiz_Sentence(db.Model):
     quiz = db.relationship('Quiz', backref='quiz_sentences')
     sentence = db.relationship('DOESNT EXIST YET', backref='quiz_sentences')
 
+
+class Verb(db.Model):
+    """Verbs to select from."""
+
+    __tablename__ = "verbs"
+
+    verb_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
+    verb = db.Column(db.Text, nullable=False)
+
