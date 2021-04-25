@@ -55,10 +55,10 @@ class Quiz_Sentence(db.Model):
 
     quiz_sentence_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
-    sentence_id = db.Column(db.Integer, db.ForeignKye('DOESNT EXIST YET'), nullable=False)
+    sentence_id = db.Column(db.Integer, db.ForeignKye('sentences.sentence_id), nullable=False)
 
     quiz = db.relationship('Quiz', backref='quiz_sentences')
-    sentence = db.relationship('DOESNT EXIST YET', backref='quiz_sentences')
+    sentence = db.relationship('Sentence', backref='quiz_sentences')
 
 
 class Verb(db.Model):
