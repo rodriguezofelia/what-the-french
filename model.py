@@ -34,4 +34,17 @@ class Grade(db.Model):
     quiz = db.relatinoship('Quiz', backref='grades')
 
 
+class Quiz(db.Model):
+    """Quiz user can take."""
 
+    __tablename__ = "quizzes"
+
+    quiz_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
+    quiz_name = db.Column(db.Text, nullable=False)
+    verb_id = db.Column(db.Integer, db.ForeignKey('DOESNT EXIST YET'), nullable=False)
+    tense_id = db.Column(db.Integer, db.ForeignKey('DOESNT EXIST YET'), nullable=False)
+
+    verb = db.relationship('DOESNT EXIST YET', backref='quizzes')
+    temse = db.relatinoship('DOESNT EXIST YET', backref='quizzes')
+
+    
