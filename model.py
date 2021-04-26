@@ -14,8 +14,8 @@ class User(db.Model):
     email = db.Column(db.Text, unique=True, nullable=False)
     first_name = db.Column(db.Text, nullable=False)
     last_name = db.Column(db.Text, nullable=False)
-    created_at = db.Column((db.datetime, default=datetime.datetime.utcnow), nullable=False)
-    modified_at = db.Column((db.datetime, default=datetime.datetime.utcnow), nullable=False)
+    created_at = db.Column(db.datetime, default=datetime.utcnow())
+    modified_at = db.Column(db.datetime, default=datetime.utcnow())
     password = db.Column(db.Text, nullable=False)
 
 
@@ -25,7 +25,7 @@ class Grade(db.Model):
     __tablename__ = "grades"
 
     grade_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
-    created_at = db.Column((db.datetime, default=datetime.datetime.utcnow), nullable=False)
+    created_at = db.Column(db.datetime, default=datetime.utcnow())
     grade = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
@@ -55,7 +55,7 @@ class Quiz_Sentence(db.Model):
 
     quiz_sentence_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
-    sentence_id = db.Column(db.Integer, db.ForeignKye('sentences.sentence_id), nullable=False)
+    sentence_id = db.Column(db.Integer, db.ForeignKye('sentences.sentence_id'), nullable=False)
 
     quiz = db.relationship('Quiz', backref='quiz_sentences')
     sentence = db.relationship('Sentence', backref='quiz_sentences')
