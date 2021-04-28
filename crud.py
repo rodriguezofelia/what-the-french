@@ -21,3 +21,14 @@ def create_grade(created_at, grade, user, quiz):
     db.session.commit()
 
     return grade
+
+def create_quiz(quiz_name, verb, tense):
+    """Create and return a new quiz."""
+
+    quiz = Quiz(quiz_name=quiz_name, verb=verb, tense=tense)
+
+    db.session.add(quiz)
+    db.session.commit()
+
+    return quiz
+    
