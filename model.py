@@ -105,12 +105,17 @@ class Sentence(db.Model):
 
     conjugated_verb_id = db.relationship('Sentence', backref='sentences')
 
-def connect_to_db(flask_app, db_uri='postgresql:///wtf', echo=True):
-    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    flask_app.config['SQLALCHEMY_ECHO'] = echo
-    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    db.app = flask_app
-    db.init_app(flask_app)
+def connect_to_db(app, db_uri='postgresql:///wtf', echo=True):
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    app.config['SQLALCHEMY_ECHO'] = echo
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.app = app
+    db.init_app(app)
 
     print('Connected to the db!')
+
+if __name__ == '__main__':
+    from server import app
+    connect_to_db(app)
