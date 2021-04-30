@@ -32,3 +32,16 @@ def create_quiz(quiz_name, verb, tense):
 
     return quiz
     
+
+def get_grade_by_id(grade_id):
+    """Return all grades for user by ID."""
+
+    return Grade.query.all(grade_id)
+
+
+def get_user_by_id(user_id):
+    """Return all users by ID."""
+
+    return User.query.all(user_id)
+
+    
