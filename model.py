@@ -51,7 +51,7 @@ class Quiz(db.Model):
     tense_id = db.Column(db.Integer, db.ForeignKey('tenses.tense_id'), nullable=False)
 
     verb = db.relationship('Verb', backref='quizzes')
-    temse = db.relationship('Tense', backref='quizzes')
+    tense = db.relationship('Tense', backref='quizzes')
 
     def __repr__(self):
         return f'<User quiz_id={self.quiz_id} quiz_name={self.quiz_name} verb_id={self.verb_id} tense_id={self.tense_id}>'
