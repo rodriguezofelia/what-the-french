@@ -54,7 +54,7 @@ class Quiz(db.Model):
     temse = db.relationship('Tense', backref='quizzes')
 
     def __repr__(self):
-        return f'<User quiz_id={self.quiz_id} quiz_name={self.quiz_name} verb_id={self.tense_id}>'
+        return f'<User quiz_id={self.quiz_id} quiz_name={self.quiz_name} verb_id={self.verb_id} tense_id={self.tense_id}>'
 
 
 class Quiz_Sentence(db.Model):
