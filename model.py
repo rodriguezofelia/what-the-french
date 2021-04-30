@@ -1,5 +1,6 @@
 """Models for french conjugation app."""
 
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -18,6 +19,9 @@ class User(db.Model):
     modified_at = db.Column(db.DateTime, default=datetime.utcnow())
     password = db.Column(db.Text, nullable=False)
 
+    def __repr__(self):
+        return f'<User user_id={self.user_id} email={self.email} first_name={self.first_name} last_name={self.last_name}>'
+
 
 class Grade(db.Model):
     """Grade(s) for a given user."""
@@ -33,6 +37,8 @@ class Grade(db.Model):
     user = db.relationship('User', backref='grades')
     quiz = db.relationship('Quiz', backref='grades')
 
+    def __repr__(self):
+        return f'<User grade_id={self.grade_id} grade={self.grade} user_id={self.user_id} quiz_id={self.quiz_id}>'
 
 class Quiz(db.Model):
     """Quiz user can take."""
@@ -47,6 +53,9 @@ class Quiz(db.Model):
     verb = db.relationship('Verb', backref='quizzes')
     temse = db.relationship('Tense', backref='quizzes')
 
+    def __repr__(self):
+        return f'<User quiz_id={self.quiz_id} quiz_name={self.quiz_name} verb_id={self.tense_id}>'
+
 
 class Quiz_Sentence(db.Model):
     """Sentences that make up each Quiz."""
@@ -60,6 +69,9 @@ class Quiz_Sentence(db.Model):
     quiz = db.relationship('Quiz', backref='quiz_sentences')
     sentence = db.relationship('Sentence', backref='quiz_sentences')
 
+    def __repr__(self):
+        return f'<User quiz_sentence_id={self.quiz_sentence_id} quiz_id={self.quiz_id} sentence_id={self.sentence_id}>'
+
 
 class Verb(db.Model):
     """Verbs to select from."""
@@ -69,6 +81,9 @@ class Verb(db.Model):
     verb_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     verb = db.Column(db.Text, nullable=False)
 
+    def __repr__(self):
+        return f'<User verb_id={self.verb_id} verb={self.verb}>'
+
 
 class Tense(db.Model):
     """Tenses to select from."""
@@ -77,6 +92,9 @@ class Tense(db.Model):
 
     tense_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     tense = db.Column(db.Text, nullable=False)
+
+    def __repr__(self):
+        return f'<User tense_id={self.tense_id} tense={self.tense}>'
 
 
 class Conjugated_Verb(db.Model): 
@@ -93,6 +111,9 @@ class Conjugated_Verb(db.Model):
     verb = db.relationship('Verb', backref='conjugated_verbs')
     tense = db.relationship('Tense', backref='conjugated_verbs')
 
+    def __repr__(self):
+        return f'<User conjugated_verb_id={self.conjugated_verb_id} conjugated_verb={self.conjugated_verb} verb_id={self.verb_id} tense_id={self.tense_id} subject_pronoun={self.subject_pronoun}>'
+
 
 class Sentence(db.Model): 
     """Sentences that the User gets answer in Quiz_Sentences."""
@@ -103,16 +124,19 @@ class Sentence(db.Model):
     blank_word_sentence = db.Column(db.Text, nullable=False)
     conjugated_verb_id = db.Column(db.Integer, db.ForeignKey('conjugated_verbs.conjugated_verb_id'), nullable=False)
 
-    conjugated_verb_id = db.relationship('Sentence', backref='sentences')
+    conjugated_verb = db.relationship('Conjugated_Verb', backref='sentences')
+
+    def __repr__(self):
+        return f'<User sentence_id={self.sentence_id} blank_word_sentence={self.blank_word_sentence} conjugated_verb_id={self.conjugated_verb_id}>'
 
 
-def connect_to_db(app, db_uri='postgresql:///wtf', echo=True):
-    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    app.config['SQLALCHEMY_ECHO'] = echo
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+def connect_to_db(flask_app, db_uri='postgresql:///wtf', echo=False):
+    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    flask_app.config['SQLALCHEMY_ECHO'] = echo
+    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    db.app = app
-    db.init_app(app)
+    db.app = flask_app
+    db.init_app(flask_app)
 
     print('Connected to the db!')
 

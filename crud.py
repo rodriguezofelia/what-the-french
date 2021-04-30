@@ -1,6 +1,6 @@
 """CRUD operations."""
 
-from model import db, User, Grade, Quiz, Quiz_Sentence, Verb, Tense, Conjugated_Verb, Sentence 
+from model import db, User, Grade, Quiz, Quiz_Sentence, Verb, Tense, Conjugated_Verb, Sentence, connect_to_db 
 
 def create_user(email, first_name, last_name, created_at, modified_at, password):
     """Create and return a new user."""
