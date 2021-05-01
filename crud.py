@@ -42,6 +42,6 @@ def get_grade_by_id(grade_id):
 def get_user_by_id(user_id):
     """Return all users by ID."""
 
-    return User.query.all(user_id)
+    return User.query.get(user_id)
 
     
