@@ -16,6 +16,13 @@ def homepage():
 
     return render_template("homepage.html")
 
+
+@app.route('/quiz')
+def all_quizzes():
+    """View all verb and tense quiz options."""
+
+    return render_template("word_conjugation.html")
+
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
