@@ -1,3 +1,5 @@
+{% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
+block body%}
 <h1>Select a Verb</h1>
 <label for="verb-select">Select a Verb:</label>
 
@@ -23,3 +25,12 @@
   <option value="past-perfect">Past Perfect</option>
   <option value="conditional">Conditional</option>
 </select>
+
+<p>
+  For the following sentences, correctly conjugate the verb given the tense and
+  subject pronoun.
+</p>
+
+<button>Submit</button>
+
+{% endblock%}
