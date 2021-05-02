@@ -9,14 +9,11 @@ block body%}
   {% for quiz in quiz_names %}
   <li>
     <p>{{ quiz[0] }}</p>
-  </li>
-  {% endfor %}
-</ul>
-
-<ul>
-  {% for grade in all_grades %}
-  <li>
-    <p>{{ grade.grade }}</p>
+    <ul>
+      <li>
+        <p>{{ all_grades[loop.index - 1].grade }}</p>
+      </li>
+    </ul>
   </li>
   {% endfor %}
 </ul>
