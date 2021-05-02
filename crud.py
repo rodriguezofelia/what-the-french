@@ -45,3 +45,10 @@ def get_user_by_id(user_id):
     return User.query.get(user_id)
 
     
+def get_quiz_name_by_user_id(user_id):
+    """Return quiz by quiz name by filtering by user ID."""
+
+    quiz_name = Grade.query.filter(Grade.user_id == user_id).join(Quiz).with_entities(Quiz.quiz_name).all()
+    
+    return quiz_name
+

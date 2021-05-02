@@ -1,9 +1,17 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
 
-<p>{{ user.first_name }} {{ user.last_name }}</p>
+<h1>{{ user.first_name }} {{ user.last_name }}</h1>
 
 <h3>All Grades</h3>
+
+<ul>
+  {% for quiz in quiz_names %}
+  <li>
+    <p>{{ quiz[0] }}</p>
+  </li>
+  {% endfor %}
+</ul>
 
 <ul>
   {% for grade in all_grades %}
