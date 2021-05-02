@@ -35,8 +35,9 @@ def get_french_podcasts():
 def show_user_profile(user_id):
 
     user = crud.get_user_by_id(user_id)
+    all_grades = crud.get_grade_by_id(user_id)
 
-    return render_template('user_profile.html', user=user)
+    return render_template('user_profile.html', user=user, all_grades=all_grades)
 
 if __name__ == '__main__':
     connect_to_db(app)

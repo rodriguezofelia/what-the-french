@@ -3,4 +3,14 @@ block body%}
 
 <p>{{ user.first_name }} {{ user.last_name }}</p>
 
+<h3>All Grades</h3>
+
+<ul>
+  {% for grade in all_grades %}
+  <li>
+    <p>{{ grade.grade }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
 {% endblock%}
