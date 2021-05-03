@@ -5,6 +5,7 @@ block body%}
 
 <h3>All Grades</h3>
 
+{% if quiz_names %}
 <ul>
   {% for quiz in quiz_names %}
   <li>
@@ -17,5 +18,9 @@ block body%}
   </li>
   {% endfor %}
 </ul>
-
-{% endblock%}
+{% else %}
+<p>
+  Oh no, it looks like you haven't taken any quizzes. Check out the
+  <a href="/quiz">word conjugation</a> section to take your first one!
+</p>
+{% endif %} {% endblock%}
