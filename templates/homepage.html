@@ -1,5 +1,27 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
+<h2>Sign Up</h2>
+<form action="/users" method="POST">
+  <p>Email <input type="text" name="email" /></p>
+
+  <p>Password <input type="password" name="password" /></p>
+
+  <p>
+    <input type="submit" />
+  </p>
+</form>
+
+<h2>Login</h2>
+<form action="/login" method="POST">
+  <p>Email <input type="text" name="email" /></p>
+
+  <p>Password <input type="password" name="password" /></p>
+
+  <p>
+    <input type="submit" />
+  </p>
+</form>
+
 <h1>WHAT THE FRENCH</h1>
 
 <p>
