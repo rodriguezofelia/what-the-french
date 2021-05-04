@@ -51,3 +51,9 @@ def get_quiz_name_by_user_id(user_id):
     quiz_name = Grade.query.filter(Grade.user_id == user_id).join(Quiz).with_entities(Quiz.quiz_name).all()
     
     return quiz_name
+
+
+def get_user_by_email(email):
+    """Return user if email exists."""
+
+    return User.query.filter(User.email == email).first()
