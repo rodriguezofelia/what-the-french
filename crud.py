@@ -51,4 +51,3 @@ def get_quiz_name_by_user_id(user_id):
     quiz_name = Grade.query.filter(Grade.user_id == user_id).join(Quiz).with_entities(Quiz.quiz_name).all()
     
     return quiz_name
-
