@@ -47,9 +47,9 @@ def get_user_by_id(user_id):
     
 def get_quiz_name_by_user_id(user_id):
     """Return quiz by quiz name by filtering by user ID."""
-
-    quiz_name = Grade.query.filter(Grade.user_id == user_id).join(Quiz).with_entities(Quiz.quiz_name).all()
     
+    quiz_name = db.session.query(Quiz.quiz_name, Grade.grade, Grade.user_id, Quiz.quiz_id).join(Quiz).filter(Grade.user_id == user_id).all()
+
     return quiz_name
 
 
@@ -64,3 +64,8 @@ def is_correct_password(email, password):
 
     if user != None:
         return user.password == password
+
+if __name__ == '__main__':
+    from server import app
+    connect_to_db(app)
+    

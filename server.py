@@ -46,9 +46,9 @@ def create_user():
         flash('This account is already taken. Sign in with the account associated with this email or create a new account.')
 
     else: 
-        user = crud.create_user(email, password, first_name, last_name)
+        user = crud.create_user(email, first_name, last_name, password)
     
-        return redirect('/users/' + str(user.user_id))
+    return redirect('/')
 
 @app.route('/login', methods=['POST'])
 def login_user():
@@ -71,7 +71,7 @@ def login_user():
 
 @app.route('/users/<user_id>')
 def show_user_profile(user_id):
-
+    
     user = crud.get_user_by_id(user_id)
     all_grades = crud.get_grade_by_id(user_id)
     quiz_names = crud.get_quiz_name_by_user_id(user_id)
