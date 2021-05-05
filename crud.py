@@ -2,10 +2,10 @@
 
 from model import db, User, Grade, Quiz, Quiz_Sentence, Verb, Tense, Conjugated_Verb, Sentence, connect_to_db 
 
-def create_user(email, first_name, last_name, created_at, modified_at, password):
+def create_user(email, first_name, last_name, password):
     """Create and return a new user."""
 
-    user = User(email=email, first_name=first_name, last_name=last_name, created_at=created_at, modified_at=modified_at, password=password)
+    user = User(email=email, first_name=first_name, last_name=last_name, password=password)
 
     db.session.add(user)
     db.session.commit()
@@ -57,3 +57,10 @@ def get_user_by_email(email):
     """Return user if email exists."""
 
     return User.query.filter(User.email == email).first()
+
+def is_correct_password(email, password):
+
+    user = get_user_by_email(email)
+
+    if user != None:
+        return user.password == password

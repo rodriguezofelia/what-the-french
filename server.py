@@ -8,7 +8,7 @@ import crud
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-# app.secret_key = "dev"
+app.secret_key = "dev"
 
 @app.route('/')
 def homepage():
@@ -29,23 +29,44 @@ def get_french_podcasts():
     """View French podcast options from API."""
 
     return render_template("podcasts.html")
-    
 
-@app.route('/users', methods=['POSTS'])
+
+@app.route('/users', methods=['POST'])
 def create_user():
     """Create a new user."""
 
     email = request.form.get('email')
     password = request.form.get('password')
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
 
     user = crud.get_user_by_email(email)
 
     if user:
         flash('This account is already taken. Sign in with the account associated with this email or create a new account.')
+
     else: 
-        crud.create_user(email, first_name, last_name, password)
+        user = crud.create_user(email, password, first_name, last_name)
     
-    return redirect('/')
+        return redirect('/users/' + str(user.user_id))
+
+@app.route('/login', methods=['POST'])
+def login_user():
+    """Logs in a user to user profile."""
+
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    user = crud.get_user_by_email(email)
+    correct_password = crud.is_correct_password(email, password)
+
+    if correct_password:
+        session['user'] = user.user_id
+        flash('You have been logged in!')
+        return redirect('/users/' + str(user.user_id))
+        
+    else:
+        flash('Oh no! Try again.')
 
 
 @app.route('/users/<user_id>')
