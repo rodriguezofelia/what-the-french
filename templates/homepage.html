@@ -1,5 +1,13 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
+<nav class="menu">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="/quiz">Quizzes</a></li>
+    <li><a href="/podcasts">Podcasts</a></li>
+  </ul>
+</nav>
+
 <h2>Sign Up</h2>
 <form action="/users" method="POST">
   <p>First Name <input type="first_name" name="first_name" /></p>
@@ -36,6 +44,6 @@ block body%}
 
 <h2>what do you want to practice today?</h2>
 
-<button>word conjugation</button>
-<button>discover french podcasts</button>
+<a href="/quiz"><button>word conjugation</button></a>
+<a href="/podcasts"><button>discover french podcasts</button></a>
 {% endblock%}
