@@ -1,5 +1,3 @@
-console.log("ARE YOU HOOKED UP OR WHAT");
-
 fetch("https://accounts.spotify.com/api/token?grant_type=client_credentials", {
   method: "POST",
   headers: {
