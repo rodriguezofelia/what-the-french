@@ -65,6 +65,35 @@ def is_correct_password(email, password):
     if user != None:
         return user.password == password
 
+def get_verbs():
+    """Return all verbs."""
+
+    return Verb.query.all()
+
+def get_tenses():
+    """Return all tenses."""
+
+    return Tense.query.all()
+
+def get_quiz_by_id(quiz_id):
+    """Return the quiz."""
+
+    return Quiz.query.get(quiz_id)
+
+def get_quiz_by_verb_and_tense(verb_id, tense_id):
+    """Return the quiz for the given verb and tense."""
+
+    return Quiz.query.get(verb_id, tense_id).one()
+
+def get_quiz_sentences(quiz_id):
+    """Return the sentences that belong to given quiz id."""
+
+    quiz_sentences = Quiz_Sentence.query.get(quiz_id)
+    sentences = Sentence.query.filter(Sentence.sentence_id.in_(quiz_sentences.sentence_id))
+    return sentences
+
+
+
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)

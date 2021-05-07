@@ -1,36 +1,32 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
 <h1>Select a Verb</h1>
-<label for="verb-select">Select a Verb:</label>
 
-<select name="verbs" id="verb-select">
-  <option value="">-- Please select an option --</option>
-  <option value="acheter">Acheter</option>
-  <option value="aller">Aller</option>
-  <option value="avoir">Avoir</option>
-  <option value="etre">Être</option>
-  <option value="devoir">Devoir</option>
-  <option value="faire">Faire</option>
-</select>
+<form action="/quiz" method="POST">
+  <label for="verb-select">Select a Verb:</label>
+  <select name="verb_id" id="verb-select">
+    <option value="">-- Please select an option --</option>
+    {% for verb in verbs %}
+    <option value="${verb.verb_id}">{{ verb.verb }}</option>
+    {% endfor %}
+  </select>
 
-<h1>Select a Tense</h1>
-<label for="tense-select">Select a Verb:</label>
+  <h1>Select a Tense</h1>
+  <label for="tense-select">Select a Verb:</label>
 
-<select name="tenses" id="tense-select">
-  <option value="">-- Please select an option --</option>
-  <option value="present">Present</option>
-  <option value="imperfect">Imperfect</option>
-  <option value="future">Future</option>
-  <option value="passe-compose">Passé Composé</option>
-  <option value="past-perfect">Past Perfect</option>
-  <option value="conditional">Conditional</option>
-</select>
-
+  <select name="tense_id" id="tense-select">
+    <option value="">-- Please select an option --</option>
+    {% for tense in tenses %}
+    <option value="${tense.tense_id}">{{ tense.tense }}</option>
+    {% endfor %}
+  </select>
+  <p>
+    <input type="submit" />
+  </p>
+</form>
 <p>
   For the following sentences, correctly conjugate the verb given the tense and
   subject pronoun.
 </p>
-
-<button>Submit</button>
 
 {% endblock%}
