@@ -34,7 +34,7 @@ def quiz():
     tense_id = request.form.get('tense_id')
 
     quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
-    sentences = quiz.sentences
+    sentences = crud.get_quiz_sentences(quiz.quiz_id)
 
     return render_template("quiz.html", quiz=quiz, sentences=sentences)
 
