@@ -52,6 +52,7 @@ class Quiz(db.Model):
 
     verb = db.relationship('Verb', backref='quizzes')
     tense = db.relationship('Tense', backref='quizzes')
+    sentences = db.relationship('Sentence', backref='quizzes', secondary="quiz_sentences")
 
     def __repr__(self):
         return f'<User quiz_id={self.quiz_id} quiz_name={self.quiz_name} verb_id={self.verb_id} tense_id={self.tense_id}>'
@@ -65,9 +66,6 @@ class Quiz_Sentence(db.Model):
     quiz_sentence_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
     sentence_id = db.Column(db.Integer, db.ForeignKey('sentences.sentence_id'), nullable=False)
-
-    quiz = db.relationship('Quiz', backref='quiz_sentences')
-    sentence = db.relationship('Sentence', backref='quiz_sentences')
 
     def __repr__(self):
         return f'<User quiz_sentence_id={self.quiz_sentence_id} quiz_id={self.quiz_id} sentence_id={self.sentence_id}>'

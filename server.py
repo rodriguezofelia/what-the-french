@@ -26,17 +26,17 @@ def quiz_selection():
 
     return render_template("word_conjugation.html", verbs=verbs, tenses=tenses)
 
-# @app.route('/quiz', methods=['POST'])
-# def quiz():
-#     """Take quiz."""
+@app.route('/quiz', methods=['POST'])
+def quiz():
+    """Take quiz."""
 
-#     verb_id = request.form.get('verb_id')
-#     tense_id = request.form.get('tense_id')
+    verb_id = request.form.get('verb_id')
+    tense_id = request.form.get('tense_id')
 
-#     quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
-#     sentences = crud.get_quiz_sentences(quiz)
+    quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
+    sentences = quiz.sentences
 
-#     return render_template("quiz.html", quiz=quiz, sentences=sentences)
+    return render_template("quiz.html", quiz=quiz, sentences=sentences)
 
 @app.route('/podcasts')
 def get_french_podcasts():
