@@ -35,8 +35,9 @@ def quiz():
 
     quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
     sentences = crud.get_quiz_sentences(quiz.quiz_id)
+    quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
 
-    return render_template("quiz.html", quiz=quiz, sentences=sentences)
+    return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
 
 @app.route('/podcasts')
 def get_french_podcasts():

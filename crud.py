@@ -92,6 +92,12 @@ def get_quiz_sentences(quiz_id):
 
     return sentences
 
+def get_quiz_name_by_id(quiz_id):
+    """Return the quiz name by quiz id."""
+
+    quiz_name = Quiz.query.get(quiz_id).quiz_name
+
+    return quiz_name
 
 
 if __name__ == '__main__':

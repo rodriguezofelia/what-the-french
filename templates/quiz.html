@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
-<h1>Quiz</h1>
+<h1>{{ quiz_name }}</h1>
 
 {% for sentence in sentences %}
 
 <p>{{ loop.index }}. {{ sentence.blank_word_sentence }}</p>
+<input type="text" id="name" name="answer" required />
 {% endfor %} {% endblock%}
