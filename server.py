@@ -30,6 +30,7 @@ def quiz_selection():
 def quiz():
     """Take quiz."""
 
+    
     verb_id = request.form.get('verb_id')
     tense_id = request.form.get('tense_id')
 
@@ -37,7 +38,11 @@ def quiz():
     sentences = crud.get_quiz_sentences(quiz.quiz_id)
     quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
 
-    return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
+    if verb_id and tense_id: 
+        return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
+    else: 
+        flash("You must select a verb and tense to proceed.")
+        return redirect('/word-conjugation')
 
 @app.route('/podcasts')
 def get_french_podcasts():

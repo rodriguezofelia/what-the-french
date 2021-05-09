@@ -4,7 +4,7 @@ block body%}
 
 <form action="/quiz" method="POST">
   <label for="verb-selection">Select a Verb:</label>
-  <select name="verb" id="verb">
+  <select name="verbs" id="{{ verb_id }}">
     <option value="verb-option">-- Please select an option --</option>
     {% for verb in verbs %}
     <option value="{{ verb.verb_id }}">{{ verb.verb }}</option>
@@ -13,7 +13,7 @@ block body%}
 
   <h1>Select a Tense</h1>
   <label for="tense-selection">Select a Tense:</label>
-  <select name="tense" id="tense">
+  <select name="tenses" id="{{ tense_id }}">
     <option value="tense-option">-- Please select an option --</option>
     {% for tense in tenses %}
     <option value="{{ tense.tense_id }}">{{ tense.tense }}</option>
