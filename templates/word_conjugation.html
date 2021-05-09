@@ -3,21 +3,20 @@ block body%}
 <h1>Select a Verb</h1>
 
 <form action="/quiz" method="POST">
-  <label for="verb-select">Select a Verb:</label>
-  <select name="verb_id" id="verb-select">
-    <option value="">-- Please select an option --</option>
+  <label for="verb-selection">Select a Verb:</label>
+  <select name="verb" id="verb">
+    <option value="verb-option">-- Please select an option --</option>
     {% for verb in verbs %}
-    <option value="${verb.verb_id}">{{ verb.verb }}</option>
+    <option value="{{ verb.verb_id }}">{{ verb.verb }}</option>
     {% endfor %}
   </select>
 
   <h1>Select a Tense</h1>
-  <label for="tense-select">Select a Verb:</label>
-
-  <select name="tense_id" id="tense-select">
-    <option value="">-- Please select an option --</option>
+  <label for="tense-selection">Select a Tense:</label>
+  <select name="tense" id="tense">
+    <option value="tense-option">-- Please select an option --</option>
     {% for tense in tenses %}
-    <option value="${tense.tense_id}">{{ tense.tense }}</option>
+    <option value="{{ tense.tense_id }}">{{ tense.tense }}</option>
     {% endfor %}
   </select>
   <p>

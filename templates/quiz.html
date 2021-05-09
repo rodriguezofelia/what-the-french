@@ -2,8 +2,19 @@
 block body%}
 <h1>{{ quiz_name }}</h1>
 
-{% for sentence in sentences %}
+<p>
+  Enter your answer for each sentence in the input following the respective
+  sentence.
+</p>
+<form action="/ROUTE GOES HERE" method="POST">
+  {% for sentence in sentences %}
 
-<p>{{ loop.index }}. {{ sentence.blank_word_sentence }}</p>
-<input type="text" id="name" name="answer" required />
-{% endfor %} {% endblock%}
+  <p>{{ loop.index }}. {{ sentence.blank_word_sentence }}</p>
+  <input type="text" id="{{ sentence.sentence_id }}" name="answer" required />
+  {% endfor %}
+  <p>
+    <input type="submit" />
+  </p>
+</form>
+
+{% endblock%}
