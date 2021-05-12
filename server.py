@@ -17,40 +17,6 @@ def homepage():
     return render_template("homepage.html")
 
 
-@app.route('/word-conjugation')
-def quiz_selection():
-    """View all verb and tense quiz options."""
-
-    verbs = crud.get_verbs()
-    tenses = crud.get_tenses()
-
-    return render_template("word_conjugation.html", verbs=verbs, tenses=tenses)
-
-@app.route('/quiz', methods=['POST'])
-def quiz():
-    """Take quiz."""
-
-    
-    verb_id = request.form.get('verb_id')
-    tense_id = request.form.get('tense_id')
-
-    quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
-    sentences = crud.get_quiz_sentences(quiz.quiz_id)
-    quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
-
-    if verb_id and tense_id: 
-        return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
-    else: 
-        flash("You must select a verb and tense to proceed.")
-        return redirect('/word-conjugation')
-
-@app.route('/podcasts')
-def get_french_podcasts():
-    """View French podcast options from API."""
-
-    return render_template("podcasts.html")
-
-
 @app.route('/users', methods=['POST'])
 def create_user():
     """Create a new user."""
@@ -70,6 +36,7 @@ def create_user():
     
     return redirect('/')
 
+
 @app.route('/login', methods=['POST'])
 def login_user():
     """Logs in a user to user profile."""
@@ -81,25 +48,65 @@ def login_user():
     correct_password = crud.is_correct_password(email, password)
 
     if correct_password:
-        session['user'] = user.user_id
-        return redirect('/users/' + str(user.user_id))
+        session["user"] = user.user_id
+        return redirect('/profile')
     
     else:
         flash('Oh no! Try again.')
         return redirect('/')
 
 
-@app.route('/users/<user_id>')
-def show_user_profile(user_id):
+@app.route('/profile')
+def show_user_profile():
+    
+    user_id = session.get('user')
+
+    if not user_id:
+        return redirect('/')
     
     user = crud.get_user_by_id(user_id)
     all_grades = crud.get_grade_by_id(user_id)
     quiz_names = crud.get_quiz_name_by_user_id(user_id)
     
-    if user:
-        return render_template('user_profile.html', user=user, all_grades=all_grades, quiz_names=quiz_names)
+
+    return render_template('user_profile.html', user=user, all_grades=all_grades, quiz_names=quiz_names)
+
+
+
+@app.route('/word-conjugation')
+def quiz_selection():
+    """View all verb and tense quiz options."""
+
+    verbs = crud.get_verbs()
+    tenses = crud.get_tenses()
+
+    return render_template("word_conjugation.html", verbs=verbs, tenses=tenses)
+
+
+@app.route('/quiz', methods=['POST'])
+def quiz():
+    """Take quiz."""
+
+    verb_id = request.form.get('verb_id')
+    tense_id = request.form.get('tense_id')
+
+    quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
+    sentences = crud.get_quiz_sentences(quiz.quiz_id)
+    quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
+
+    if verb_id and tense_id: 
+        return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
     else: 
-        return redirect('/')
+        flash("You must select a verb and tense to proceed.")
+        return redirect('/word-conjugation')
+
+
+@app.route('/podcasts')
+def get_french_podcasts():
+    """View French podcast options from API."""
+
+    return render_template("podcasts.html")
+
 
 if __name__ == '__main__':
     connect_to_db(app)

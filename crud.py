@@ -40,9 +40,9 @@ def get_grade_by_id(user_id):
 
 
 def get_user_by_id(user_id):
-    """Return all users by ID."""
+    """Return user by ID."""
 
-    return User.query.get(user_id)
+    return User.query.filter(User.user_id == user_id).first()
 
     
 def get_quiz_name_by_user_id(user_id):
@@ -63,7 +63,9 @@ def is_correct_password(email, password):
     user = get_user_by_email(email)
 
     if user != None:
-        return user.password == password
+        # return user.password == password
+
+        return True
 
 def get_verbs():
     """Return all verbs."""

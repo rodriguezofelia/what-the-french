@@ -128,7 +128,7 @@ class Sentence(db.Model):
         return f'<User sentence_id={self.sentence_id} blank_word_sentence={self.blank_word_sentence} conjugated_verb_id={self.conjugated_verb_id}>'
 
 
-def connect_to_db(flask_app, db_uri='postgresql:///wtf', echo=False):
+def connect_to_db(flask_app, db_uri='postgresql:///wtf', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
