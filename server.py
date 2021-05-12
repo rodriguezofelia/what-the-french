@@ -68,7 +68,6 @@ def show_user_profile():
     all_grades = crud.get_grade_by_id(user_id)
     quiz_names = crud.get_quiz_name_by_user_id(user_id)
     
-
     return render_template('user_profile.html', user=user, all_grades=all_grades, quiz_names=quiz_names)
 
 
