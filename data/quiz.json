@@ -1,7 +1,34 @@
 [
   {
-    "quiz_name": "To Go: Aller Le Présent Quiz ",
-    "verb": "aller",
-    "tense": "present"
+    "quiz_name": "To Be: Être Le Présent Quiz",
+    "verb": "être",
+    "tense": "present",
+    "sentences": [
+      {
+        "blank_word_sentence": "Je (I) ______ à Paris.",
+        "conjugated_verb": "suis",
+        "subject_pronoun": "I"
+      },
+      {
+        "blank_word_sentence": "(you, formal) ______ vous végétarien?",
+        "conjugated_verb": "êtes",
+        "subject_pronoun": "you"
+      },
+      {
+        "blank_word_sentence": "Où (you, informal) ______ tu maintenant?",
+        "conjugated_verb": "es",
+        "subject_pronoun": "you"
+      },
+      {
+        "blank_word_sentence": "Nous ______ professeurs de français",
+        "conjugated_verb": "sommes",
+        "subject_pronoun": "we"
+      },
+      {
+        "blank_word_sentence": "Nous ______ professeurs de français",
+        "conjugated_verb": "sont",
+        "subject_pronoun": "they"
+      }
+    ]
   }
 ]
