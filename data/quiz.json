@@ -6,8 +6,10 @@
     "sentences": [
       {
         "blank_word_sentence": "Je (I) ______ à Paris.",
-        "conjugated_verb": "suis",
-        "subject_pronoun": "I"
+        "conjugated_verb": {
+          "verb": "suis",
+          "subject_pronoun": "I"
+        }
       },
       {
         "blank_word_sentence": "(you, formal) ______ vous végétarien?",

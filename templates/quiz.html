@@ -6,12 +6,25 @@ block body%}
   Enter your answer for each sentence in the input following the respective
   sentence.
 </p>
-<form action="/ROUTE GOES HERE" method="POST">
+<form action="/grade" method="POST">
   {% for sentence in sentences %}
 
   <p>{{ loop.index }}. {{ sentence.blank_word_sentence }}</p>
-  <input type="text" id="{{ sentence.sentence_id }}" name="answer" required />
+  <input
+    type="hidden"
+    id="{{ sentence.sentence_id }}"
+    name="{{ sentence.sentence_id }}"
+    value="{{ sentence.sentence_id }}"
+    required
+  />
+  <input
+    type="text"
+    id="answer_{{ sentence.sentence_id }}"
+    name="answer_{{ sentence.sentence_id }}"
+    required
+  />
   {% endfor %}
+  <input type="hidden" name="quiz_id" value="{{ quiz.quiz_id }}" />
   <p>
     <input type="submit" />
   </p>

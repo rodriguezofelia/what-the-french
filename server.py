@@ -86,18 +86,41 @@ def quiz_selection():
 def quiz():
     """Take quiz."""
 
-    verb_id = request.form.get('verb_id')
-    tense_id = request.form.get('tense_id')
+    verb = request.form.get('verb')
+    tense = request.form.get('tense')
 
-    quiz = crud.get_quiz_by_verb_and_tense(verb_id, tense_id)
+    quiz = crud.get_quiz_by_verb_and_tense(verb, tense)
     sentences = crud.get_quiz_sentences(quiz.quiz_id)
     quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
 
-    if verb_id and tense_id: 
+    if verb and tense: 
         return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
     else: 
         flash("You must select a verb and tense to proceed.")
         return redirect('/word-conjugation')
+
+@app.route('/grade', methods=['POST'])
+def quiz_grade():
+    """Grade for quiz."""
+
+    quiz_id = request.form.get('quiz_id')
+    sentences = crud.get_quiz_sentences(quiz_id)
+
+    for sentence in sentences:
+        answer_id = request.form.get('answer_' + str(sentence.sentence_id))
+        sentence_id = sentence.sentence_id
+
+        # response = str((answer_id) + str(sentence_id))
+        response = str(answer_id)
+
+        return response
+    
+
+        # how to grade tehm 
+        # output answer and setnence and show grade next to it
+        # check if answer submitted is correct
+        # compare conj verb and case sensitive 
+        
 
 
 @app.route('/podcasts')
