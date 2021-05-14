@@ -106,14 +106,20 @@ def quiz_grade():
     quiz_id = request.form.get('quiz_id')
     sentences = crud.get_quiz_sentences(quiz_id)
 
+    answers = {}
+
     for sentence in sentences:
         answer_id = request.form.get('answer_' + str(sentence.sentence_id))
         sentence_id = sentence.sentence_id
 
         # response = str((answer_id) + str(sentence_id))
-        response = str(answer_id)
+        # response = str(answer_id)
 
-        return response
+        answers[sentence_id] = answer_id
+
+    return answers
+
+    
     
 
         # how to grade tehm 
