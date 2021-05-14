@@ -30,5 +30,37 @@
         "subject_pronoun": "they"
       }
     ]
+  },
+  {
+    "quiz_name": "To Be: Être Le Passé Composé Quiz",
+    "verb": "être",
+    "tense": "passe compose",
+    "sentences": [
+      {
+        "blank_word_sentence": "Il ______ malade.",
+        "conjugated_verb": "a été",
+        "subject_pronoun": "he"
+      },
+      {
+        "blank_word_sentence": "Tu ______ journaliste?",
+        "conjugated_verb": "a été",
+        "subject_pronoun": "he"
+      },
+      {
+        "blank_word_sentence": "Quand ______ vous ______ champion du monde?",
+        "conjugated_verb": "avez, été",
+        "subject_pronoun": "they"
+      },
+      {
+        "blank_word_sentence": "J’ ______ au Mexique pendant 10 ans.",
+        "conjugated_verb": "ai été",
+        "subject_pronoun": "I"
+      },
+      {
+        "blank_word_sentence": "Ils ______ contents du résultats.",
+        "conjugated_verb": "ont été",
+        "subject_pronoun": "they"
+      }
+    ]
   }
 ]
