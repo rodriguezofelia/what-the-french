@@ -2,7 +2,7 @@
 
 import os
 import json
-from datetime import datatime
+from datetime import datetime
 
 import crud
 import model
@@ -17,6 +17,8 @@ model.db.create_all()
 with open('data/quiz.json') as f:
     quiz_data = json.loads(f.read())
 
+for quiz_name in quiz_data: 
+    print(quiz_name)
 
 
 
