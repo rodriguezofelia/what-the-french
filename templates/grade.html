@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
+block body%}
+
+<h3>Quiz Results for {{ quiz_name }}</h3>
+
+{% for sentence in sentences %}
+<li>
+  {{ sentence.blank_word_sentence }}
+  <ul>
+    <li>
+      {% if answers[sentence.sentence_id][2] == True %}
+      <p>Your answer was correct!</p>
+      {% else %}
+      <p>
+        Uh oh, that's not correct. You answered: {{
+        answers[sentence.sentence_id][0] }}. The correct answer was: {{
+        answers[sentence.sentence_id][1] }}.
+      </p>
+      {% endif %}
+    </li>
+  </ul>
+</li>
+{% endfor %} {% endblock%}

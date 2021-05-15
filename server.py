@@ -104,6 +104,7 @@ def quiz_grade():
     """Grade for quiz."""
 
     quiz_id = request.form.get('quiz_id')
+    quiz_name = crud.get_quiz_name_by_id(quiz_id)
     sentences = crud.get_quiz_sentences(quiz_id)
 
     answers = {}
@@ -113,18 +114,13 @@ def quiz_grade():
         sentence_id = sentence.sentence_id
         sentence_answer = crud.get_sentence_answer(sentence_id)
         
-        answers[user_answer] = [sentence_answer[0].lower(), user_answer.lower() == sentence_answer[0]]
+        answers[sentence_id] = [user_answer, sentence_answer[0].lower(), user_answer.lower() == sentence_answer[0]]
         
-
-    return answers
+    return render_template("grade.html", quiz_id=quiz_id, sentences=sentences, quiz_name=quiz_name, answers=answers)
 
     
-
-
-    
-
-        # output answer and setnence and show grade next to it
-        
+    # pass grade to create a new record in table
+    # make sure that the profile shows the new grade        
 
 
 @app.route('/podcasts')
