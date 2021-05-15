@@ -108,6 +108,8 @@ def get_sentence_answer(sentence_id):
 
     return sentence_answer
 
+# create function to insert grade into grades table
+# user_id, quiz_id, etc 
 
 if __name__ == '__main__':
     from server import app

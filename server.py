@@ -108,15 +108,23 @@ def quiz_grade():
     sentences = crud.get_quiz_sentences(quiz_id)
 
     answers = {}
+    num_correct_answers = 0
+    num_questions = len(sentences)
 
     for sentence in sentences:
         user_answer = request.form.get('answer_' + str(sentence.sentence_id))
         sentence_id = sentence.sentence_id
         sentence_answer = crud.get_sentence_answer(sentence_id)
         
-        answers[sentence_id] = [user_answer, sentence_answer[0].lower(), user_answer.lower() == sentence_answer[0]]
+        answers[sentence_id] = [user_answer.lower(), sentence_answer[0].lower(), user_answer.lower() == sentence_answer[0]]
+
+
+        if user_answer.lower() == sentence_answer[0]:
+            num_correct_answers += 1
+
+    score = num_correct_answers/num_questions
         
-    return render_template("grade.html", quiz_id=quiz_id, sentences=sentences, quiz_name=quiz_name, answers=answers)
+    return render_template("grade.html", quiz_id=quiz_id, sentences=sentences, quiz_name=quiz_name, answers=answers, score=score)
 
     
     # pass grade to create a new record in table

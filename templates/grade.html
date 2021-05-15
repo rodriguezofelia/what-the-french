@@ -9,10 +9,10 @@ block body%}
   <ul>
     <li>
       {% if answers[sentence.sentence_id][2] == True %}
-      <p>Your answer was correct!</p>
+      <p>Your answer, {{ answers[sentence.sentence_id][0] }}, was correct!</p>
       {% else %}
       <p>
-        Uh oh, that's not correct. You answered: {{
+        Uh oh, that wasn't correct. You answered: {{
         answers[sentence.sentence_id][0] }}. The correct answer was: {{
         answers[sentence.sentence_id][1] }}.
       </p>
@@ -20,4 +20,6 @@ block body%}
     </li>
   </ul>
 </li>
-{% endfor %} {% endblock%}
+{% endfor %}
+<p>You scored {{'%0.0f'| format(score * 100 |float)}}%.</p>
+{% endblock%}
