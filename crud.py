@@ -101,6 +101,13 @@ def get_quiz_name_by_id(quiz_id):
 
     return quiz_name
 
+def get_sentence_answer(sentence_id):
+    """Return the answer for given sentence."""
+
+    sentence_answer = db.session.query(Conjugated_Verb.conjugated_verb).join(Sentence).filter(Sentence.sentence_id == sentence_id).one()
+
+    return sentence_answer
+
 
 if __name__ == '__main__':
     from server import app

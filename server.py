@@ -109,23 +109,21 @@ def quiz_grade():
     answers = {}
 
     for sentence in sentences:
-        answer_id = request.form.get('answer_' + str(sentence.sentence_id))
+        user_answer = request.form.get('answer_' + str(sentence.sentence_id))
         sentence_id = sentence.sentence_id
-
-        # response = str((answer_id) + str(sentence_id))
-        # response = str(answer_id)
-
-        answers[sentence_id] = answer_id
+        sentence_answer = crud.get_sentence_answer(sentence_id)
+        
+        answers[user_answer] = [sentence_answer[0].lower(), user_answer.lower() == sentence_answer[0]]
+        
 
     return answers
 
     
+
+
     
 
-        # how to grade tehm 
         # output answer and setnence and show grade next to it
-        # check if answer submitted is correct
-        # compare conj verb and case sensitive 
         
 
 
