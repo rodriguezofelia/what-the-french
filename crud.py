@@ -115,8 +115,7 @@ def insert_grade(grade, user_id, quiz_id):
 
     db.session.add(new_grade)
     db.session.commit()
-# create function to insert grade into grades table
-# user_id, quiz_id, etc 
+
 
 if __name__ == '__main__':
     from server import app
