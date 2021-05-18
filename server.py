@@ -79,6 +79,7 @@ def quiz_selection():
     user_id = session.get('user')
 
     if not user_id:
+        flash("You must be signed in to take a quiz.")
         return redirect('/')
 
     verbs = crud.get_verbs()
