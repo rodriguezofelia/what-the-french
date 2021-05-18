@@ -108,6 +108,13 @@ def get_sentence_answer(sentence_id):
 
     return sentence_answer
 
+def insert_grade(grade, user_id, quiz_id):
+    """Insert quiz grade into Grades table."""
+
+    new_grade = Grade(grade=grade, user_id=user_id, quiz_id=quiz_id)
+
+    db.session.add(new_grade)
+    db.session.commit()
 # create function to insert grade into grades table
 # user_id, quiz_id, etc 
 
