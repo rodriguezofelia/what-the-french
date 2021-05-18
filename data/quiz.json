@@ -13,23 +13,31 @@
       },
       {
         "blank_word_sentence": "(you, formal) ______ vous végétarien?",
-        "conjugated_verb": "êtes",
-        "subject_pronoun": "you"
+        "conjugated_verb": {
+          "verb": "êtes",
+          "subject_pronoun": "you"
+        }
       },
       {
         "blank_word_sentence": "Où (you, informal) ______ tu maintenant?",
-        "conjugated_verb": "es",
-        "subject_pronoun": "you"
+        "conjugated_verb": {
+          "verb": "es",
+          "subject_pronoun": "you"
+        }
       },
       {
         "blank_word_sentence": "Nous ______ professeurs de français",
-        "conjugated_verb": "sommes",
-        "subject_pronoun": "we"
+        "conjugated_verb": {
+          "verb": "sommes",
+          "subject_pronoun": "we"
+        }
       },
       {
         "blank_word_sentence": "Nous ______ professeurs de français",
-        "conjugated_verb": "sont",
-        "subject_pronoun": "they"
+        "conjugated_verb": {
+          "verb": "sont",
+          "subject_pronoun": "they"
+        }
       }
     ]
   },
@@ -40,28 +48,38 @@
     "sentences": [
       {
         "blank_word_sentence": "Il ______ malade.",
-        "conjugated_verb": "a été",
-        "subject_pronoun": "he"
+        "conjugated_verb": {
+          "verb": "a été",
+          "subject_pronoun": "he"
+        }
       },
       {
         "blank_word_sentence": "Tu ______ journaliste?",
-        "conjugated_verb": "a été",
-        "subject_pronoun": "he"
+        "conjugated_verb": {
+          "verb": "a été",
+          "subject_pronoun": "he"
+        }
       },
       {
         "blank_word_sentence": "Quand ______ vous ______ champion du monde?",
-        "conjugated_verb": "avez, été",
-        "subject_pronoun": "they"
+        "conjugated_verb": {
+          "verb": "avez, été",
+          "subject_pronoun": "they"
+        }
       },
       {
         "blank_word_sentence": "J’ ______ au Mexique pendant 10 ans.",
-        "conjugated_verb": "ai été",
-        "subject_pronoun": "I"
+        "conjugated_verb": {
+          "verb": "ai été",
+          "subject_pronoun": "I"
+        }
       },
       {
         "blank_word_sentence": "Ils ______ contents du résultats.",
-        "conjugated_verb": "ont été",
-        "subject_pronoun": "they"
+        "conjugated_verb": {
+          "verb": "ont été",
+          "subject_pronoun": "they"
+        }
       }
     ]
   }
