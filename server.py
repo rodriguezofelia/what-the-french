@@ -76,6 +76,11 @@ def show_user_profile():
 def quiz_selection():
     """View all verb and tense quiz options."""
 
+    user_id = session.get('user')
+
+    if not user_id:
+        return redirect('/')
+
     verbs = crud.get_verbs()
     tenses = crud.get_tenses()
 
@@ -124,11 +129,7 @@ def quiz_grade():
 
     score = num_correct_answers/num_questions
         
-    return render_template("grade.html", quiz_id=quiz_id, sentences=sentences, quiz_name=quiz_name, answers=answers, score=score)
-
-    
-    # pass grade to create a new record in table
-    # make sure that the profile shows the new grade        
+    return render_template("grade.html", quiz_id=quiz_id, sentences=sentences, quiz_name=quiz_name, answers=answers, score=score)       
 
 
 @app.route('/podcasts')
