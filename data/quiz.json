@@ -33,7 +33,7 @@
         }
       },
       {
-        "blank_word_sentence": "Nous ______ professeurs de français",
+        "blank_word_sentence": "UPDATE SENTENCE",
         "conjugated_verb": {
           "verb": "sont",
           "subject_pronoun": "they"

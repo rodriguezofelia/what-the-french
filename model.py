@@ -67,6 +67,9 @@ class Quiz_Sentence(db.Model):
     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
     sentence_id = db.Column(db.Integer, db.ForeignKey('sentences.sentence_id'), nullable=False)
 
+    quiz = db.relationship('Quiz', backref="quiz_sentences")
+    sentence = db.relationship('Sentence', backref="sentences")
+
     def __repr__(self):
         return f'<User quiz_sentence_id={self.quiz_sentence_id} quiz_id={self.quiz_id} sentence_id={self.sentence_id}>'
 

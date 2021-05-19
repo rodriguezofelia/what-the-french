@@ -116,6 +116,62 @@ def insert_grade(grade, user_id, quiz_id):
     db.session.add(new_grade)
     db.session.commit()
 
+def create_verb(verb):
+    """Insert verbs into Verbs table."""
+
+    existing_verb = Verb.query.filter_by(verb=verb).first()
+
+    if existing_verb:
+        return existing_verb
+
+    verb = Verb(verb=verb)
+
+    db.session.add(verb)
+    db.session.commit()
+
+    return verb
+
+def create_tense(tense):
+    """Insert verbs into Tense table."""
+
+    existing_tense = Tense.query.filter_by(tense=tense).first()
+
+    if existing_tense:
+        return existing_tense
+
+    tense = Tense(tense=tense)
+
+    db.session.add(tense)
+    db.session.commit()
+
+    return tense
+
+def create_blank_word_sentence(blank_word_sentence, conjugated_verb):
+    """Insert blank word sentence into Sentence table."""
+
+    blank_word_sentence = Sentence(blank_word_sentence=blank_word_sentence, conjugated_verb=conjugated_verb)
+
+    db.session.add(blank_word_sentence)
+    db.session.commit()
+
+    return blank_word_sentence
+
+def create_conjugated_verb(conjugated_verb, verb_id, tense_id, subject_pronoun):
+
+    conjugated_verb = Conjugated_Verb(conjugated_verb=conjugated_verb, verb_id=verb_id, tense_id=tense_id, 
+            subject_pronoun=subject_pronoun)
+
+    db.session.add(conjugated_verb)
+    db.session.commit()
+
+    return conjugated_verb
+
+def add_quiz_sentences(quiz, sentence):
+
+    quiz.sentences.append(sentence)
+
+    db.session.add(quiz)
+    db.session.commit()
 
 if __name__ == '__main__':
     from server import app
