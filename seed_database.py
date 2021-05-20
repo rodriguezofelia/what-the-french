@@ -14,6 +14,13 @@ os.system('createdb wtf')
 model.connect_to_db(server.app)
 model.db.create_all()
 
+with open('data/users.json') as f: 
+    user_data = json.loads(f.read())
+
+for user in user_data:
+    user = crud.create_user(user["email"], user["first_name"], user["last_name"], user["password"], )
+
+
 with open('data/quiz.json') as f:
     quiz_data = json.loads(f.read())
 
@@ -31,7 +38,5 @@ for quiz in quiz_data:
 
         quiz_sentences = crud.add_quiz_sentences(quiz_name, blank_word_sentence)
 
-
-# create random set of users with emails and pws
 
 # create a random set of grades for users

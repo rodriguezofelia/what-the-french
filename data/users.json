@@ -1,0 +1,20 @@
+[
+  {
+    "email": "badlarry@gmail.com",
+    "first_name": "Bob",
+    "last_name": "Larry",
+    "password": "blarry123"
+  },
+  {
+    "email": "grilliam@gmail.com",
+    "first_name": "Grilliam",
+    "last_name": "William",
+    "password": "gwilliam11"
+  },
+  {
+    "email": "bichael@gmail.com",
+    "first_name": "Bichael",
+    "last_name": "Michael",
+    "password": "bikemike"
+  }
+]
