@@ -4,6 +4,7 @@ from flask import (Flask, render_template, request, flash, session,
                    redirect)
 from model import connect_to_db
 import crud
+import uuid
 
 from jinja2 import StrictUndefined
 
@@ -98,9 +99,10 @@ def quiz():
     quiz = crud.get_quiz_by_verb_and_tense(verb, tense)
     sentences = crud.get_quiz_sentences(quiz.quiz_id)
     quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
+    uuid_code = uuid.uuid4()
 
     if verb and tense: 
-        return render_template("quiz.html", quiz=quiz, sentences=sentences, quiz_name=quiz_name)
+        return render_template("quiz.html", quiz=quiz, uuid_code=uuid_code, sentences=sentences, quiz_name=quiz_name)
     else: 
         flash("You must select a verb and tense to proceed.")
         return redirect('/word-conjugation')
@@ -111,6 +113,7 @@ def quiz_grade():
 
     user_id = session.get('user')
     quiz_id = request.form.get('quiz_id')
+    uuid_code = request.form.get('uuid')
     quiz_name = crud.get_quiz_name_by_id(quiz_id)
     sentences = crud.get_quiz_sentences(quiz_id)
 
@@ -131,7 +134,8 @@ def quiz_grade():
 
     score = (num_correct_answers/num_questions) * 100
 
-    crud.insert_grade(score, user_id, quiz_id)
+    if not crud.get_grade_by_uuid(uuid_code, user_id, quiz_id): 
+        crud.insert_grade(score, uuid_code, user_id, quiz_id)
         
     return render_template("grade.html", quiz_id=quiz_id, sentences=sentences, quiz_name=quiz_name, answers=answers, score=score)       
 
@@ -143,7 +147,7 @@ def get_french_podcasts():
     return render_template("podcasts.html")
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
 

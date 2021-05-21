@@ -12,10 +12,10 @@ def create_user(email, first_name, last_name, password):
 
     return user
 
-def create_grade(grade, user_id, quiz_id):
+def create_grade(grade, uuid_code, user_id, quiz_id):
     """Create and return a new quiz grade."""
 
-    user_grade = Grade(grade=grade, user_id=user_id, quiz_id=quiz_id)
+    user_grade = Grade(grade=grade, uuid_code=uuid_code, user_id=user_id, quiz_id=quiz_id)
 
     db.session.add(user_grade)
     db.session.commit()
@@ -108,10 +108,10 @@ def get_sentence_answer(sentence_id):
 
     return sentence_answer
 
-def insert_grade(grade, user_id, quiz_id):
+def insert_grade(grade, uuid_code, user_id, quiz_id):
     """Insert quiz grade into Grades table."""
 
-    new_grade = Grade(grade=grade, user_id=user_id, quiz_id=quiz_id)
+    new_grade = Grade(grade=grade, uuid_code=uuid_code, user_id=user_id, quiz_id=quiz_id)
 
     db.session.add(new_grade)
     db.session.commit()
@@ -172,6 +172,12 @@ def add_quiz_sentences(quiz, sentence):
 
     db.session.add(quiz)
     db.session.commit()
+
+def get_grade_by_uuid(uuid_code, user_id, quiz_id):
+
+    grade = Grade.query.filter_by(uuid_code=uuid_code, user_id=user_id, quiz_id=quiz_id).first()
+
+    return grade
 
 if __name__ == '__main__':
     from server import app

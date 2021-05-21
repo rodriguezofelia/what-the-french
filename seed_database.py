@@ -44,6 +44,4 @@ with open('data/grades.json') as f:
     grade_data = json.loads(f.read())
 
 for grade_record in grade_data:
-    user_grade = crud.create_grade(grade_record["grade"], grade_record["user"], grade_record["quiz"])
-
-# create a random set of grades for users
+    user_grade = crud.create_grade(grade_record["grade"], grade_record["uuid_code"], grade_record["user"], grade_record["quiz"])

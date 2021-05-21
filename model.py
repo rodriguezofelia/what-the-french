@@ -31,6 +31,7 @@ class Grade(db.Model):
     grade_id = db.Column(db.Integer, autoincrement=True, primary_key=True, unique=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow())
     grade = db.Column(db.Integer, nullable=False)
+    uuid_code = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
     
