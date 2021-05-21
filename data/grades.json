@@ -1,0 +1,17 @@
+[
+  {
+    "grade": 60,
+    "user": 1,
+    "quiz": 1
+  },
+  {
+    "grade": 80,
+    "user": 2,
+    "quiz": 2
+  },
+  {
+    "grade": 100,
+    "user": 3,
+    "quiz": 1
+  }
+]

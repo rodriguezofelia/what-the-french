@@ -12,15 +12,15 @@ def create_user(email, first_name, last_name, password):
 
     return user
 
-def create_grade(created_at, grade, user, quiz):
+def create_grade(grade, user_id, quiz_id):
     """Create and return a new quiz grade."""
 
-    grade = Grade(created_at=create_at, grade=grade, user=user, quiz=quiz)
+    user_grade = Grade(grade=grade, user_id=user_id, quiz_id=quiz_id)
 
-    db.session.add(grade)
+    db.session.add(user_grade)
     db.session.commit()
 
-    return grade
+    return user_grade
 
 def create_quiz(quiz_name, verb, tense):
     """Create and return a new quiz."""

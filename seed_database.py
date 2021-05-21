@@ -17,8 +17,9 @@ model.db.create_all()
 with open('data/users.json') as f: 
     user_data = json.loads(f.read())
 
-for user in user_data:
-    user = crud.create_user(user["email"], user["first_name"], user["last_name"], user["password"], )
+for user_record in user_data:
+    user = crud.create_user(user_record["email"], user_record["first_name"], 
+            user_record["last_name"], user_record["password"])
 
 
 with open('data/quiz.json') as f:
@@ -38,5 +39,11 @@ for quiz in quiz_data:
 
         quiz_sentences = crud.add_quiz_sentences(quiz_name, blank_word_sentence)
 
+
+with open('data/grades.json') as f:
+    grade_data = json.loads(f.read())
+
+for grade_record in grade_data:
+    user_grade = crud.create_grade(grade_record["grade"], grade_record["user"], grade_record["quiz"])
 
 # create a random set of grades for users
