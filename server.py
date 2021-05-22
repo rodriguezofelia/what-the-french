@@ -1,7 +1,7 @@
 
 
 from flask import (Flask, render_template, request, flash, session,
-                   redirect)
+                   redirect, make_response)
 from model import connect_to_db
 import crud
 import uuid
@@ -50,7 +50,9 @@ def login_user():
 
     if correct_password:
         session["user"] = user.user_id
-        return redirect('/profile')
+        response = make_response(redirect('/profile'))
+        response.set_cookie("logged-in", "true")
+        return response
     
     else:
         flash('Oh no! Try again.')
@@ -158,6 +160,15 @@ def sign_up():
     """Log into account."""
 
     return render_template("sign-up.html")
+
+@app.route('/log-out')
+def log_out():
+    """Log user out of account."""
+
+    session.clear()
+    response = make_response(redirect('/'))
+    response.delete_cookie("logged-in")
+    return response
 
 if __name__ == '__main__': 
     connect_to_db(app)
