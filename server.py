@@ -161,7 +161,7 @@ def sign_up():
 
     return render_template("sign-up.html")
 
-@app.route('/log-out')
+@app.route('/sign-out')
 def log_out():
     """Log user out of account."""
 
