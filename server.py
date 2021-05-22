@@ -147,6 +147,18 @@ def get_french_podcasts():
     return render_template("podcasts.html")
 
 
+@app.route('/sign-in')
+def login():
+    """Log into account."""
+
+    return render_template("login.html")
+
+@app.route('/sign-up')
+def sign_up():
+    """Log into account."""
+
+    return render_template("sign-up.html")
+
 if __name__ == '__main__': 
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)

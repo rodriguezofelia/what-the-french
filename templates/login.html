@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
+block body%}
+<div class="login-container">
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <p>Email <input type="text" placeholder="Email" name="email" /></p>
+    <p>
+      Password
+      <input type="password" placeholder="Password" name="password" />
+    </p>
+
+    <p>
+      <input type="submit" />
+    </p>
+  </form>
+
+  <a href="/sign-up">Sign Up</a>
+</div>
+{% endblock%}
