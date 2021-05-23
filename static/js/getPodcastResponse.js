@@ -41,7 +41,7 @@ const showResponse = (response) => {
     </div>
     <div class="d-flex flex-column justify-content-center px-4">
       <div>Name: ${item.name}</div>
-      <div>Description: ${item.description}</div>
+      ${item.description ? `<div>Description: ${item.description}</div>` : ""}
       <div>URL: ${item.external_urls.spotify}</div>
     </div>
     </div>`;
