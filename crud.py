@@ -63,9 +63,7 @@ def is_correct_password(email, password):
     user = get_user_by_email(email)
 
     if user != None:
-        # return user.password == password
-
-        return True
+        return user.password == password
 
 def get_verbs():
     """Return all verbs."""

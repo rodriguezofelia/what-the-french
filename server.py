@@ -38,29 +38,33 @@ def create_user():
         return response
     else: 
         user = crud.create_user(email, first_name, last_name, password)
-    
-        return redirect('/')
+        session["user"] = user.user_id
+        response = make_response({}, 200)
+        response.set_cookie("logged-in", "true")
+        return response
 
 
 @app.route('/login', methods=['POST'])
 def login_user():
     """Logs in a user to user profile."""
 
-    email = request.form.get('email')
-    password = request.form.get('password')
+    decoded_request = json.loads(request.data)
+    email = decoded_request['email']
+    password = decoded_request['password']
+    incorrect_pw_msg = 'Oh no, this does not look like its correct. Please try again.'
 
     user = crud.get_user_by_email(email)
     correct_password = crud.is_correct_password(email, password)
 
     if correct_password:
         session["user"] = user.user_id
-        response = make_response(redirect('/profile'))
+        response = make_response({}, 200)
         response.set_cookie("logged-in", "true")
         return response
     
     else:
-        flash('Oh no! Try again.')
-        return redirect('/')
+        response = jsonify({"error": incorrect_pw_msg}), status.HTTP_400_BAD_REQUEST
+        return response
 
 
 @app.route('/profile')
