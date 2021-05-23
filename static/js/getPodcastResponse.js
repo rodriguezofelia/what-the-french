@@ -42,7 +42,9 @@ const showResponse = (response) => {
     <div class="d-flex flex-column justify-content-center px-4">
       <div>Name: ${item.name}</div>
       ${item.description ? `<div>Description: ${item.description}</div>` : ""}
-      <div>URL: ${item.external_urls.spotify}</div>
+      <div>Interested in listening? <a href='${
+        item.external_urls.spotify
+      }'>Click this link to podcast playlist.</a></div>
     </div>
     </div>`;
   });
