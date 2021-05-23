@@ -3,24 +3,44 @@ block body%}
 
 <div class="signup-container">
   <h2>Sign Up</h2>
-  <form action="/users" method="POST">
-    <p>
-      First Name
-      <input type="text" placeholder="First Name" name="first_name" />
-    </p>
-    <p>
-      Last Name
-      <input type="text" placeholder="Last Name" name="last_name" />
-    </p>
-    <p>Email <input type="text" placeholder="Email" name="email" /></p>
-    <p>
-      Password
-      <input type="password" placeholder="Password" name="password" />
-    </p>
-    <p>
+  <form>
+    <div>
+      <label for="first-name">First Name</label>
+      <input
+        type="text"
+        id="first-name"
+        placeholder="First Name"
+        name="first_name"
+      />
+    </div>
+    <div>
+      <label for="last-name">Last Name</label>
+      <input
+        type="text"
+        id="last-name"
+        placeholder="Last Name"
+        name="last_name"
+      />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Email" name="email" />
+      <span id="email-error-msg"></span>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        name="password"
+      />
+    </div>
+    <div>
       <button type="submit">Submit</button>
-    </p>
+    </div>
   </form>
   <a href="/sign-in">Login</a>
 </div>
+<script src="static/signUp.js"></script>
 {% endblock%}

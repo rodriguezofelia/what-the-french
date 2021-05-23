@@ -85,7 +85,7 @@ def get_quiz_by_id(quiz_id):
 def get_quiz_by_verb_and_tense(verb_id, tense_id):
     """Return the quiz for the given verb and tense."""
 
-    return Quiz.query.filter(verb_id == verb_id).filter(tense_id == tense_id).first()
+    return Quiz.query.filter(Quiz.verb_id == verb_id).filter(Quiz.tense_id == tense_id).first()
 
 def get_quiz_sentences(quiz_id):
     """Return the sentences that belong to given quiz id."""

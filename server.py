@@ -1,10 +1,12 @@
 
 
 from flask import (Flask, render_template, request, flash, session,
-                   redirect, make_response)
+                   redirect, jsonify, make_response)
+from flask_api import status
 from model import connect_to_db
 import crud
 import uuid
+import json
 
 from jinja2 import StrictUndefined
 
@@ -22,20 +24,22 @@ def homepage():
 def create_user():
     """Create a new user."""
 
-    email = request.form.get('email')
-    password = request.form.get('password')
-    first_name = request.form.get('first_name')
-    last_name = request.form.get('last_name')
+    decoded_request = json.loads(request.data)
+    email = decoded_request['email']
+    password = decoded_request['password']
+    first_name = decoded_request['first_name']
+    last_name = decoded_request['last_name']
+    duplicate_email_msg = "This email is already taken. Sign in with the account associated with this email or create a new account. "
 
     user = crud.get_user_by_email(email)
 
     if user:
-        flash('This account is already taken. Sign in with the account associated with this email or create a new account.')
-
+        response = jsonify({"error": duplicate_email_msg,}), status.HTTP_400_BAD_REQUEST
+        return response
     else: 
         user = crud.create_user(email, first_name, last_name, password)
     
-    return redirect('/')
+        return redirect('/')
 
 
 @app.route('/login', methods=['POST'])
@@ -92,15 +96,16 @@ def quiz():
     verb = request.form.get('verb')
     tense = request.form.get('tense')
 
-    quiz = crud.get_quiz_by_verb_and_tense(verb, tense)
-    sentences = crud.get_quiz_sentences(quiz.quiz_id)
-    quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
-    uuid_code = uuid.uuid4()
-
+    print(verb, "verb")
+    print(tense, "tense")
     if verb and tense: 
+        quiz = crud.get_quiz_by_verb_and_tense(verb, tense)
+        sentences = crud.get_quiz_sentences(quiz.quiz_id)
+        quiz_name = crud.get_quiz_name_by_id(quiz.quiz_id)
+        uuid_code = uuid.uuid4()
+
         return render_template("quiz.html", quiz=quiz, uuid_code=uuid_code, sentences=sentences, quiz_name=quiz_name)
     else: 
-        flash("You must select a verb and tense to proceed.")
         return redirect('/word-conjugation')
 
 @app.route('/grade', methods=['POST'])

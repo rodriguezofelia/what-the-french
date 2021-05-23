@@ -3,15 +3,25 @@ block body%}
 <div class="login-container">
   <h2>Log In</h2>
   <form action="/login" method="POST">
-    <p>Email <input type="text" placeholder="Email" name="email" /></p>
-    <p>
-      Password
-      <input type="password" placeholder="Password" name="password" />
-    </p>
-
-    <p>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Email" name="email" />
+      {% if duplicate_email_msg %}
+      <span>{{ duplicate_email_msg }} </span>
+      {% endif %}
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        name="password"
+      />
+    </div>
+    <div>
       <input type="submit" />
-    </p>
+    </div>
   </form>
   <p>Don't have an account? <a href="/sign-up">Sign Up</a></p>
 </div>
