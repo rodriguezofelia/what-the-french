@@ -16,14 +16,22 @@
     />
   </head>
   <body>
-    <nav class="menu">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li id="quiz-nav-link"><a href="/word-conjugation">Quizzes</a></li>
-        <li><a href="/podcasts">Podcasts</a></li>
-        <li id="account-link"><a href="/profile">Account</a></li>
-        <li><a id="log-in-out-link" href="/sign-in">Login</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-sm justify-content-between">
+      <a class="navbar-brand" href="/">wtf.</a>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarText">
+        <ul class="navbar-nav navbar-collapse">
+          <li class="nav-item" id="quiz-nav-link">
+            <a href="/word-conjugation">Quizzes</a>
+          </li>
+          <li class="nav-item"><a href="/podcasts">Podcasts</a></li>
+          <li class="nav-item" id="account-link">
+            <a href="/profile">Account</a>
+          </li>
+          <li class="nav-item">
+            <a id="log-in-out-link" href="/sign-in">Login</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <script src="static/js/utils.js"></script>
     <script src="static/js/nav-bar.js"></script>
