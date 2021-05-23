@@ -2,5 +2,5 @@ const quizLink = document.getElementById("quiz-link");
 
 if (!isUserLoggedIn()) {
   quizLink.innerHTML =
-    "<p>Looking to take a quiz? You'll need to <a href='/sign-in'>sign in!</a></p>";
+    "<p class='m-0'>Looking to take a quiz? You'll need to <a class='text-decoration-none' href='/sign-in'>sign in!</a></p>";
 }
