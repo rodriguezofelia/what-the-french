@@ -22,7 +22,6 @@ const login = async () => {
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
-  console.log("ARE YOU LISTENGIN");
   event.preventDefault();
   login();
 });

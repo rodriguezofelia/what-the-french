@@ -34,15 +34,16 @@ const requestSpotifyPlaylists = async () => {
 
 const showResponse = (response) => {
   const podcastListContainer = document.querySelector("#podcastPlaylistList");
-  console.log("are you wroking today ", response.playlists.items);
-
   const podcastHtmlItems = response.playlists.items.map((item) => {
-    return `<div>
-    <div>Name: ${item.name}</div>
-    <div>Description: ${item.description}</div>
-    <div>URL: ${item.external_urls.spotify}</div>
-    <div>Image: ${item.images[0].url}</div>
-    <div>Tracks: ${item.tracks.href}</div>
+    return `<div class="d-flex px-5 py-3">
+    <div>
+      <div><img class='spotify-img' src=${item.images[0].url}></div>
+    </div>
+    <div class="d-flex flex-column justify-content-center px-4">
+      <div>Name: ${item.name}</div>
+      <div>Description: ${item.description}</div>
+      <div>URL: ${item.external_urls.spotify}</div>
+    </div>
     </div>`;
   });
   podcastListContainer.innerHTML = podcastHtmlItems.join("");
