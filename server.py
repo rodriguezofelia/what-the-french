@@ -150,7 +150,7 @@ def get_french_podcasts():
 
 
 @app.route('/sign-in')
-def login():
+def sign_in():
     """Log into account."""
 
     return render_template("login.html")
@@ -162,7 +162,7 @@ def sign_up():
     return render_template("sign-up.html")
 
 @app.route('/sign-out')
-def log_out():
+def sign_out():
     """Log user out of account."""
 
     session.clear()
