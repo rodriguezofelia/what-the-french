@@ -79,12 +79,6 @@ def show_user_profile():
 def quiz_selection():
     """View all verb and tense quiz options."""
 
-    user_id = session.get('user')
-
-    if not user_id:
-        flash("You must be signed in to take a quiz.")
-        return redirect('/')
-
     verbs = crud.get_verbs()
     tenses = crud.get_tenses()
 
