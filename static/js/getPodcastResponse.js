@@ -44,7 +44,7 @@ const showResponse = (response) => {
       ${item.description ? `<div>Description: ${item.description}</div>` : ""}
       <div>Interested in listening? <a href='${
         item.external_urls.spotify
-      }'>Click this link to podcast playlist.</a></div>
+      }'>Go to podcast playlist.</a></div>
     </div>
     </div>`;
   });

@@ -45,8 +45,8 @@ def create_user():
 
 
 @app.route('/login', methods=['POST'])
-def login_user():
-    """Logs in a user to user profile."""
+def set_cookie():
+    """Sets cookie if user exists and passes status."""
 
     decoded_request = json.loads(request.data)
     email = decoded_request['email']
@@ -154,7 +154,7 @@ def get_french_podcasts():
 
 @app.route('/sign-in')
 def sign_in():
-    """Log into account."""
+    """Renders login form."""
 
     return render_template("login.html")
 
