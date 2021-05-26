@@ -83,14 +83,14 @@ def show_user_profile():
 
 
 
-@app.route('/word-conjugation')
+@app.route('/verb-conjugation')
 def quiz_selection():
     """View all verb and tense quiz options."""
 
     verbs = crud.get_verbs()
     tenses = crud.get_tenses()
 
-    return render_template("word_conjugation.html", verbs=verbs, tenses=tenses)
+    return render_template("verb_conjugation.html", verbs=verbs, tenses=tenses)
 
 
 @app.route('/quiz', methods=['POST'])
@@ -110,7 +110,7 @@ def quiz():
 
         return render_template("quiz.html", quiz=quiz, uuid_code=uuid_code, sentences=sentences, quiz_name=quiz_name)
     else: 
-        return redirect('/word-conjugation')
+        return redirect('/verb-conjugation')
 
 @app.route('/grade', methods=['POST'])
 def quiz_grade():
