@@ -1,7 +1,10 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
 <h1>{{ quiz_name }}</h1>
-
+<p>
+  For the following sentences, correctly conjugate the verb given the tense and
+  subject pronoun.
+</p>
 <p>
   Enter your answer for each sentence in the input following the respective
   sentence.
@@ -27,7 +30,7 @@ block body%}
   <input type="hidden" name="quiz_id" value="{{ quiz.quiz_id }}" />
   <input type="hidden" name="uuid" value="{{ uuid_code }}" />
   <p>
-    <input type="submit" />
+    <button type="submit">Submit</button>
   </p>
 </form>
 
