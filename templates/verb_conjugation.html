@@ -4,31 +4,35 @@ block body%}
   <div class="p-4">
     <h1>Verb Conjugation</h1>
   </div>
-  <div>
-    <h2 class="px-4">Select a Verb</h2>
-    <form action="/quiz" method="POST">
-      <label for="verb-selection"></label>
-      <select name="verb" id="verb-selection" required>
-        <option value="">-- Select a verb --</option>
-        {% for verb in verbs %}
-        <option value="{{ verb.verb_id }}">{{ verb.verb }}</option>
-        {% endfor %}
-      </select>
-      <h2 class="px-4">Select a Tense</h2>
-      <label for="tense-selection"></label>
-      <select name="tense" id="tense-selection" required>
-        <option value="">-- Select a tense --</option>
-        {% for tense in tenses %}
-        <option value="{{ tense.tense_id }}">{{ tense.tense }}</option>
-        {% endfor %}
-      </select>
-      <div class="d-flex justify-content-center align-items-center flex-column my-2">
-        <p>
-          <button type="submit">Submit</button>
+    <div class="px-5 mx-5">
+      <div class="text-center px-5 mx-5">
+        <p>The verb and tense you select will generate a quiz for you to practice your
+          respective selections.
         </p>
+      </div>
     </div>
-    </form>
+      <form action="/quiz" method="POST">
+          <label for="verb-selection"></label>
+          <select class="form-select" name="verb" id="verb-selection" required>
+            <option value="">-- Select a verb --</option>
+            {% for verb in verbs %}
+            <option value="{{ verb.verb_id }}">{{ verb.verb }}</option>
+            {% endfor %}
+          </select>
+          <label for="tense-selection"></label>
+          <select class="form-select" name="tense" id="tense-selection" required>
+            <option value="">-- Select a tense --</option>
+            {% for tense in tenses %}
+            <option value="{{ tense.tense_id }}">{{ tense.tense }}</option>
+            {% endfor %}
+          </select>
+        <div class="d-flex justify-content-center align-items-center flex-column my-3">
+          <p>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </p>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
   {% endblock%}
 </div>
