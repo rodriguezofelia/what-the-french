@@ -17,7 +17,7 @@ class User(db.Model):
     last_name = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow())
     modified_at = db.Column(db.DateTime, default=datetime.utcnow())
-    password = db.Column(db.Text, nullable=False)
+    password = db.Column(db.LargeBinary, nullable=False)
 
     def __repr__(self):
         return f'<User user_id={self.user_id} email={self.email} first_name={self.first_name} last_name={self.last_name}>'

@@ -7,6 +7,7 @@ from model import connect_to_db
 import crud
 import uuid
 import json
+import bcrypt
 
 from jinja2 import StrictUndefined
 
@@ -37,7 +38,8 @@ def create_user():
         response = jsonify({"error": duplicate_email_msg,}), status.HTTP_400_BAD_REQUEST
         return response
     else: 
-        user = crud.create_user(email, first_name, last_name, password)
+        hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        user = crud.create_user(email, first_name, last_name, hashed_pw)
         session["user"] = user.user_id
         response = make_response({}, 200)
         response.set_cookie("logged-in", "true")

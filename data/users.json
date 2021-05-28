@@ -3,18 +3,18 @@
     "email": "badlarry@gmail.com",
     "first_name": "Bob",
     "last_name": "Larry",
-    "password": "blarry123"
+    "password": "$2b$04$4nbsmByDbw77O5DedDIWdeswSu/mMdEyOJ.rIzid02Qst7fv1StDC"
   },
   {
     "email": "grilliam@gmail.com",
     "first_name": "Grilliam",
     "last_name": "William",
-    "password": "gwilliam11"
+    "password": "$2b$04$hmuVO44aOPV9f2sr.d7PiO9ehSmmhlDPpZ9w28AzWUibNXGu0kqUO"
   },
   {
     "email": "bichael@gmail.com",
     "first_name": "Bichael",
     "last_name": "Michael",
-    "password": "bikemike"
+    "password": "$2b$04$6s81NWR8lBfVYM8w01HxoOMKBFVlMud8Ci6rNei6EbQzIbvn4Rtvq"
   }
 ]

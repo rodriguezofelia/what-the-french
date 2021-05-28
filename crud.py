@@ -1,6 +1,7 @@
 """CRUD operations."""
 
-from model import db, User, Grade, Quiz, Quiz_Sentence, Verb, Tense, Conjugated_Verb, Sentence, connect_to_db 
+from model import db, User, Grade, Quiz, Quiz_Sentence, Verb, Tense, Conjugated_Verb, Sentence, connect_to_db
+import bcrypt 
 
 def create_user(email, first_name, last_name, password):
     """Create and return a new user."""
@@ -63,7 +64,7 @@ def is_correct_password(email, password):
     user = get_user_by_email(email)
 
     if user != None:
-        return user.password == password
+        return bcrypt.checkpw(password.encode('utf8'), user.password)
 
 def get_verbs():
     """Return all verbs."""
