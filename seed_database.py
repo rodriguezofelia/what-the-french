@@ -14,16 +14,16 @@ os.system('createdb wtf')
 model.connect_to_db(server.app)
 model.db.create_all()
 
-# with open('data/users.json') as f: 
-#     user_data = json.loads(f.read())
+with open('data/users.json') as f: 
+    user_data = json.load(f)
 
-# for user_record in user_data:
-#     user = crud.create_user(user_record["email"], user_record["first_name"], 
-#             user_record["last_name"], user_record["password"])
+for user_record in user_data:
+    user = crud.create_user(user_record["email"], user_record["first_name"], 
+            user_record["last_name"], user_record["password"].encode('utf-8'))
 
 
 with open('data/quiz.json') as f:
-    quiz_data = json.loads(f.read())
+    quiz_data = json.load(f)
 
 for quiz in quiz_data: 
     tense = crud.create_tense(quiz["tense"])
@@ -40,8 +40,8 @@ for quiz in quiz_data:
         quiz_sentences = crud.add_quiz_sentences(quiz_name, blank_word_sentence)
 
 
-# with open('data/grades.json') as f:
-#     grade_data = json.loads(f.read())
+with open('data/grades.json') as f:
+    grade_data = json.load(f)
 
-# for grade_record in grade_data:
-#     user_grade = crud.create_grade(grade_record["grade"], grade_record["uuid_code"], grade_record["user"], grade_record["quiz"])
+for grade_record in grade_data:
+    user_grade = crud.create_grade(grade_record["grade"], grade_record["uuid_code"], grade_record["user"], grade_record["quiz"])
