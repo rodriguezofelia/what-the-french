@@ -35,6 +35,9 @@ const requestSpotifyPlaylists = async () => {
 const showResponse = (response) => {
   const podcastListContainer = document.querySelector("#podcastPlaylistList");
   const podcastHtmlItems = response.playlists.items.map((item) => {
+    if (item.images[0] == undefined) {
+      return "";
+    }
     return `<div class="d-flex px-5 py-3">
     <div>
       <div><img class='spotify-img' src=${item.images[0].url}></div>
