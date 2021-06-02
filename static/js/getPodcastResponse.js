@@ -33,7 +33,8 @@ const requestSpotifyPlaylists = async () => {
 };
 
 const showResponse = (response) => {
-  const podcastListContainer = document.querySelector("#podcastPlaylistList");
+  const podcastListContainer =
+    document.querySelector("#podcastPlaylistList") || {};
   const podcastHtmlItems = response.playlists.items.map((item) => {
     if (item.images[0] == undefined) {
       return "";
@@ -52,6 +53,7 @@ const showResponse = (response) => {
     </div>`;
   });
   podcastListContainer.innerHTML = podcastHtmlItems.join("");
+  return podcastHtmlItems.join("");
 };
 
 const getPodcasts = async () => {
