@@ -1,5 +1,9 @@
 # What The French
 
+An app built as a capstone project from my learnings from my bootcamp. Ultimately, a project for those who know a bit of French and are interested in quizzing themselves or want to listen to French podcasts.
+
+## Motivation
+
 Have you been practicing French for a while and just can't remember which verb and tense to use? Yeah, me neither. That's why I wanted to create What The French to help me practice and hopefully get 100% on one of the quizzes I created. If you're not interested in practicing your verb conjugation, you can listen to French podcasts instead.
 
 ## Technologies Used
