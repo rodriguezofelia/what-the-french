@@ -25,6 +25,7 @@
     const response = await requestSpotifyPlaylists();
     assert(response.playlists.items.length > 0);
   });
+
   it("should return html as expected", function () {
     const response = {
       playlists: {
@@ -39,7 +40,6 @@
       },
     };
     const returnedHtml = showResponse(response);
-    console.log(returnedHtml, "return");
     const expectedHtml = `<div class="d-flex px-5 py-3">
     <div>
       <div><img class='spotify-img' src=meow.jpg></div>
@@ -51,5 +51,10 @@
     </div>
     </div>`;
     assert(returnedHtml === expectedHtml);
+  });
+
+  it("should login user with correct login info", async function () {
+    // given the value in the input element when the form is submitted
+    // it should hit the /login endpoint with that value
   });
 })();
