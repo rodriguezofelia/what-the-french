@@ -18,3 +18,11 @@
 .info-container {
   background-color: #fff;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}

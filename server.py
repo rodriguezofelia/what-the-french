@@ -8,6 +8,10 @@ import crud
 import uuid
 import json
 import bcrypt
+import requests
+import base64
+import config
+
 
 from jinja2 import StrictUndefined
 
@@ -174,6 +178,24 @@ def sign_out():
     response = make_response(redirect('/'))
     response.delete_cookie("logged-in")
     return response
+
+@app.route('/spotify-auth')
+def french_podcasts():
+
+    secret_str = config.spotify_client_id + ":" + config.spotify_client_secret
+    secret_bytes = base64.b64encode(secret_str.encode('utf-8'))
+
+    auth_response = requests.post('https://accounts.spotify.com/api/token?grant_type=client_credentials', 
+        headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': 'Basic ' + secret_bytes.decode('utf-8') })
+
+    access_token = auth_response.json()['access_token']
+
+    search_api_response = requests.get('https://api.spotify.com/v1/search?q=french%10podcasts&type=playlist', 
+        headers={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + access_token})
+    
+    dict_search_api_res = dict(search_api_response.json())
+    return dict_search_api_res
+
 
 if __name__ == '__main__': 
     connect_to_db(app)

@@ -52,9 +52,4 @@
     </div>`;
     assert(returnedHtml === expectedHtml);
   });
-
-  it("should login user with correct login info", async function () {
-    // given the value in the input element when the form is submitted
-    // it should hit the /login endpoint with that value
-  });
 })();
