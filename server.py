@@ -85,7 +85,7 @@ def show_user_profile():
     all_grades = crud.get_grade_by_id(user_id)
     quiz_names = crud.get_quiz_name_by_user_id(user_id)
     
-    return render_template('user_profile.html', user=user, all_grades=all_grades, quiz_names=quiz_names)
+    return render_template('user-profile.html', user=user, all_grades=all_grades, quiz_names=quiz_names)
 
 
 
@@ -96,7 +96,7 @@ def quiz_selection():
     verbs = crud.get_verbs()
     tenses = crud.get_tenses()
 
-    return render_template("verb_conjugation.html", verbs=verbs, tenses=tenses)
+    return render_template("verb-conjugation.html", verbs=verbs, tenses=tenses)
 
 
 @app.route('/quiz', methods=['POST'])
