@@ -1,25 +1,38 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
+<div class="text-center py-5">
+  <h1>{{ quiz_name }}</h1>
+  <h2>Quiz Results</h2>
+</div>
 
-<h3>Quiz Results for {{ quiz_name }}</h3>
+<div class="d-flex justify-content-center pt-4">
+  <p>You scored {{'%0.0f'| format(score|float)}}%.</p>
+</div>
 
 {% for sentence in sentences %}
-<li>
-  {{ sentence.blank_word_sentence }}
-  <ul>
-    <li>
-      {% if answers[sentence.sentence_id][2] == True %}
-      <p>Your answer, {{ answers[sentence.sentence_id][0] }}, was correct!</p>
+<div class="d-flex flex-column my-1"></div>
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-between card-container pt-4 w-50">
+    <ul>
+      <div>
+        {{ loop.index }}. {{ sentence.blank_word_sentence }} {% if
+        answers[sentence.sentence_id][2] == True %}
+        <ul>
+          <li>
+            <p>
+              Your answer, {{ answers[sentence.sentence_id][0] }}, was correct!
+            </p>
+          </li>
+        </ul>
+      </div>
       {% else %}
-      <p>
-        Uh oh, that wasn't correct. You answered: {{
-        answers[sentence.sentence_id][0] }}. The correct answer was: {{
-        answers[sentence.sentence_id][1] }}.
-      </p>
+      <ul>
+        <li>You answered: {{ answers[sentence.sentence_id][0] }}.</li>
+        <li>The correct answer was: {{ answers[sentence.sentence_id][1] }}.</li>
+      </ul>
       {% endif %}
-    </li>
-  </ul>
-</li>
-{% endfor %}
-<p>You scored {{'%0.0f'| format(score|float)}}%.</p>
-{% endblock%}
+    </ul>
+  </div>
+</div>
+
+{% endfor %} {% endblock%}
