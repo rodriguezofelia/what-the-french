@@ -23,11 +23,9 @@ You can do two things on What The French: quiz yourself on verb conjugation and 
 
 ## How to run locally
 
-`$ git clone project`
-
+- `$ git clone project`
 - cd into file path
 - create a virutal env and activate it
-  $ pip3 install -r requirements.txt
-
+- `$ pip3 install -r requirements.txt`
 - to run project in interactive mode
-  $ python3 -i server.py
+- `$ python3 -i server.py`
