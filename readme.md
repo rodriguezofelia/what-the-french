@@ -27,8 +27,15 @@ You can do two things on What The French: quiz yourself on verb conjugation and 
 git clone project
 ```
 
-- cd into file path
+- cd into file path project was cloned to
 - create a virutal env and activate it
-- `$ pip3 install -r requirements.txt`
+
+```bash
+pip3 install -r requirements.txt
+```
+
 - to run project in interactive mode
-- `$ python3 -i server.py`
+
+```bash
+$ python3 -i server.py
+```
