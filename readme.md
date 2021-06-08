@@ -22,3 +22,12 @@ Have you been practicing French for a while and just can't remember which verb a
 You can do two things on What The French: quiz yourself on verb conjugation and listen to french podcasts. In order to have access to the quiz section, you must create an account and login. Once you've taken a quiz, your scores will be listed in your Account section. Don't worry, you can take any given quiz as many times you'd like! If you are only interested in listening to podcasts, you don't need to create an account - you can start listening right away.
 
 ## How to run locally
+
+$ git clone project
+
+- cd into file path
+- create a virutal env and activate it
+  $ pip3 install -r requirements.txt
+
+- to run project in interactive mode
+  $ python3 -i server.py
