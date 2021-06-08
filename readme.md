@@ -23,7 +23,7 @@ You can do two things on What The French: quiz yourself on verb conjugation and 
 
 ## How to run locally
 
-$ git clone project
+`$ git clone project`
 
 - cd into file path
 - create a virutal env and activate it
