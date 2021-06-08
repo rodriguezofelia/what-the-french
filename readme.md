@@ -24,14 +24,14 @@ You can do two things on What The French: quiz yourself on verb conjugation and 
 ## How to run locally
 
 ```bash
-git clone project
+$ git clone project
 ```
 
 - cd into file path project was cloned to
 - create a virutal env and activate it
 
 ```bash
-pip3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 - to run project in interactive mode
