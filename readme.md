@@ -34,8 +34,8 @@ $ git clone project
 $ pip3 install -r requirements.txt
 ```
 
-- to run project in interactive mode
+- to run project with the following command
 
 ```bash
-$ python3 -i server.py
+$ python3 server.py
 ```
