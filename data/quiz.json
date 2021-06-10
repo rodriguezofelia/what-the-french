@@ -57,14 +57,14 @@
         "blank_word_sentence": "Tu ______ journaliste?",
         "conjugated_verb": {
           "verb": "as été",
-          "subject_pronoun": "he"
+          "subject_pronoun": "you"
         }
       },
       {
         "blank_word_sentence": "Quand vous ______ champion du monde?",
         "conjugated_verb": {
           "verb": "avez été",
-          "subject_pronoun": "they"
+          "subject_pronoun": "you"
         }
       },
       {
@@ -78,6 +78,48 @@
         "blank_word_sentence": "Ils ______ contents du résultats.",
         "conjugated_verb": {
           "verb": "ont été",
+          "subject_pronoun": "they"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Be: Être Le Futur Simple Quiz",
+    "verb": "être",
+    "tense": "futur simple",
+    "sentences": [
+      {
+        "blank_word_sentence": "Tu ______ au concert demain?",
+        "conjugated_verb": {
+          "verb": "seras",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Je ______ au marché mercredi.",
+        "conjugated_verb": {
+          "verb": "serai",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ en Russie cet été.",
+        "conjugated_verb": {
+          "verb": "seront",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Elle ______ triste de te voir partir.",
+        "conjugated_verb": {
+          "verb": "sera",
+          "subject_pronoun": "she"
+        }
+      },
+      {
+        "blank_word_sentence": "On ______ jeudi demain?",
+        "conjugated_verb": {
+          "verb": "sera",
           "subject_pronoun": "they"
         }
       }
