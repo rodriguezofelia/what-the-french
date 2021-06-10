@@ -124,5 +124,131 @@
         }
       }
     ]
+  },
+  {
+    "quiz_name": "To Go: Aller Le Présent Quiz",
+    "verb": "aller",
+    "tense": "present",
+    "sentences": [
+      {
+        "blank_word_sentence": "Tu ______ au supermarché ce soir pour les légumes?",
+        "conjugated_verb": {
+          "verb": "vas",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ à la station de métro.",
+        "conjugated_verb": {
+          "verb": "vont",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Il fait chaud! Vous voulez  ______ chez le marchand de glaces?",
+        "conjugated_verb": {
+          "verb": "aller",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ à la maison de maman aujourd’hui.",
+        "conjugated_verb": {
+          "verb": "allons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Je ______ aux Etats-Unis la semaine prochaine",
+        "conjugated_verb": {
+          "verb": "vais",
+          "subject_pronoun": "I"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Go: Aller Le Passé Composé Quiz",
+    "verb": "aller",
+    "tense": "passe compose",
+    "sentences": [
+      {
+        "blank_word_sentence": "Je (masculine)  ______ au supermarché hier.",
+        "conjugated_verb": {
+          "verb": "suis allé",
+          "subject_pronoun": "he"
+        }
+      },
+      {
+        "blank_word_sentence": "Est-ce que tu (féminine) ______ à France?",
+        "conjugated_verb": {
+          "verb": "es allée",
+          "subject_pronoun": "she"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ au cinéma et avons vu un film d’horreur.",
+        "conjugated_verb": {
+          "verb": "sommes allés",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Anna (féminine) ______ au yoga avec sa sœur, Sophie.",
+        "conjugated_verb": {
+          "verb": "est allée",
+          "subject_pronoun": "she"
+        }
+      },
+      {
+        "blank_word_sentence": "Dan (masculine) ______ à un spectacle d'opéra qu'il a vraiment apprécié la semaine dernière.",
+        "conjugated_verb": {
+          "verb": "est allé",
+          "subject_pronoun": "he"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Go: Aller Le Futur Simple Quiz",
+    "verb": "aller",
+    "tense": "futur simple",
+    "sentences": [
+      {
+        "blank_word_sentence": "Demain, J’______ a la bibliothèque.",
+        "conjugated_verb": {
+          "verb": "irai",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ à Austin cet automne.",
+        "conjugated_verb": {
+          "verb": "irons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ bien.",
+        "conjugated_verb": {
+          "verb": "iront",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Vous ______ au zoo la semaine prochaine?",
+        "conjugated_verb": {
+          "verb": "irez",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ acheter un gâteau pour l'anniversaire de ta fille demain?",
+        "conjugated_verb": {
+          "verb": "iras",
+          "subject_pronoun": "you"
+        }
+      }
+    ]
   }
 ]
