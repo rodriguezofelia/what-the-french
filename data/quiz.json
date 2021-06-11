@@ -250,5 +250,383 @@
         }
       }
     ]
+  },
+  {
+    "quiz_name": "To Do/Make: Faire Le Présent Quiz",
+    "verb": "faire",
+    "tense": "present",
+    "sentences": [
+      {
+        "blank_word_sentence": "Qu’est-ce que tu ______ aujourd’hui?",
+        "conjugated_verb": {
+          "verb": "fais",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Elle ______ un gâteau pour la fête de ce soir.",
+        "conjugated_verb": {
+          "verb": "fait",
+          "subject_pronoun": "she"
+        }
+      },
+      {
+        "blank_word_sentence": "Il ______ très froid maintenant.",
+        "conjugated_verb": {
+          "verb": "fait",
+          "subject_pronoun": "he"
+        }
+      },
+      {
+        "blank_word_sentence": "Vous ______ la vaisselle.",
+        "conjugated_verb": {
+          "verb": "faites",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ beaucoup de plats pour le dîner.",
+        "conjugated_verb": {
+          "verb": "faisons",
+          "subject_pronoun": "we"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Do/Make: Faire Le Passé Composé Quiz",
+    "verb": "faire",
+    "tense": "passe compose",
+    "sentences": [
+      {
+        "blank_word_sentence": "Les croissants que tu ______ hier étaient délicieux.",
+        "conjugated_verb": {
+          "verb": "as fait",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ ceux-ci ou ceux-là?",
+        "conjugated_verb": {
+          "verb": "ont fait",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "J’______ ce chapeau.",
+        "conjugated_verb": {
+          "verb": "ai fait",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ une promenade.",
+        "conjugated_verb": {
+          "verb": "avons fait",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ quoi?",
+        "conjugated_verb": {
+          "verb": "as fait",
+          "subject_pronoun": "you"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Do/Make: Faire Le Futur Simple Quiz",
+    "verb": "faire",
+    "tense": "futur simple",
+    "sentences": [
+      {
+        "blank_word_sentence": "Je ______ le dîner ce soir.",
+        "conjugated_verb": {
+          "verb": "ferai",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ le lit plus tard.",
+        "conjugated_verb": {
+          "verb": "ferons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ les préparatifs nécessaires pour le vol.",
+        "conjugated_verb": {
+          "verb": "feront",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Elle nous ______ ses biscuits préférés ce soir. C'est très mignon.",
+        "conjugated_verb": {
+          "verb": "fera",
+          "subject_pronoun": "she"
+        }
+      },
+      {
+        "blank_word_sentence": "Vous ______ un trou dans le sol si vous continuez ainsi.",
+        "conjugated_verb": {
+          "verb": "ferez",
+          "subject_pronoun": "you"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Eat: Manger Le Présent Quiz",
+    "verb": "manger",
+    "tense": "present",
+    "sentences": [
+      {
+        "blank_word_sentence": "Qu’est-ce que tu veux ______ ?",
+        "conjugated_verb": {
+          "verb": "manger",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ trop de tacos.",
+        "conjugated_verb": {
+          "verb": "mangeons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Je ne ______ pas de viande.",
+        "conjugated_verb": {
+          "verb": "mange",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ du riz?",
+        "conjugated_verb": {
+          "verb": "manges",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ trois croissants chaque dimanche.",
+        "conjugated_verb": {
+          "verb": "manges",
+          "subject_pronoun": "you"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Eat: Manger Le Passé Composé Quiz",
+    "verb": "manger",
+    "tense": "passe compose",
+    "sentences": [
+      {
+        "blank_word_sentence": "J'______ trop de melon le week-end dernier.",
+        "conjugated_verb": {
+          "verb": "ai mangé",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Il ______ tout le gâteau avant le dîner.",
+        "conjugated_verb": {
+          "verb": "a mangé",
+          "subject_pronoun": "he"
+        }
+      },
+      {
+        "blank_word_sentence": "Oui, elle ______ tous ses légumes.",
+        "conjugated_verb": {
+          "verb": "a mangé",
+          "subject_pronoun": "she"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ du steak et des frites pour le dîner.",
+        "conjugated_verb": {
+          "verb": "avons mangé",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils sont allés au parc et ______ des tartes.",
+        "conjugated_verb": {
+          "verb": "ont mangé",
+          "subject_pronoun": "they"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Eat: Manger Le Futur Simple Quiz",
+    "verb": "manger",
+    "tense": "futur simple",
+    "sentences": [
+      {
+        "blank_word_sentence": "Je ______ toutes les glaces en Italie.",
+        "conjugated_verb": {
+          "verb": "mangerai",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ des sushis au Japon.",
+        "conjugated_verb": {
+          "verb": "mangeront",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ toute la glace.",
+        "conjugated_verb": {
+          "verb": "mangerons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ au café ce matin?",
+        "conjugated_verb": {
+          "verb": "mangeras",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Qu’est-ce que vous ______ pour le dîner?",
+        "conjugated_verb": {
+          "verb": "mangerez",
+          "subject_pronoun": "they"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Buy: Acheter Le Présent Quiz",
+    "verb": "acheter",
+    "tense": "present",
+    "sentences": [
+      {
+        "blank_word_sentence": "Vous ______ du chocolat?",
+        "conjugated_verb": {
+          "verb": "achetez",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ une maison près de la bibliothèque.",
+        "conjugated_verb": {
+          "verb": "achètent",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ du pain pour le petit déjeuner?",
+        "conjugated_verb": {
+          "verb": "achètes",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ des croissants dans la boulangerie.",
+        "conjugated_verb": {
+          "verb": "achetons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "J’______ des vêtements dans un magasin de la rue Dupont.",
+        "conjugated_verb": {
+          "verb": "achète",
+          "subject_pronoun": "I"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Buy: Acheter Le Passé Composé Quiz",
+    "verb": "acheter",
+    "tense": "passe compose",
+    "sentences": [
+      {
+        "blank_word_sentence": "Il ______ une bague de fiançailles!",
+        "conjugated_verb": {
+          "verb": "a acheté",
+          "subject_pronoun": "he"
+        }
+      },
+      {
+        "blank_word_sentence": "Ils ______ un canapé pour leur nouvelle maison.",
+        "conjugated_verb": {
+          "verb": "ont acheté",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "C'est la nouvelle robe que j'______ pour mon anniversaire.",
+        "conjugated_verb": {
+          "verb": "ai achetée",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ une maison.",
+        "conjugated_verb": {
+          "verb": "avons acheté",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Vous ______ de la nourriture au marché?",
+        "conjugated_verb": {
+          "verb": "avez acheté",
+          "subject_pronoun": "you"
+        }
+      }
+    ]
+  },
+  {
+    "quiz_name": "To Buy: Acheter Le Futur Simple Quiz",
+    "verb": "acheter",
+    "tense": "futur simple",
+    "sentences": [
+      {
+        "blank_word_sentence": "J'______ un nouveau pantalon après ces déchirures.",
+        "conjugated_verb": {
+          "verb": "achèterai",
+          "subject_pronoun": "I"
+        }
+      },
+      {
+        "blank_word_sentence": "Nous ______ des vêtements le semestre prochain.",
+        "conjugated_verb": {
+          "verb": "achèterons",
+          "subject_pronoun": "we"
+        }
+      },
+      {
+        "blank_word_sentence": "Tu ______ des pâtisseries pour la fête?",
+        "conjugated_verb": {
+          "verb": "achèteras",
+          "subject_pronoun": "you"
+        }
+      },
+      {
+        "blank_word_sentence": "Vous ______ bientôt une maison?",
+        "conjugated_verb": {
+          "verb": "achèterez",
+          "subject_pronoun": "they"
+        }
+      },
+      {
+        "blank_word_sentence": "Elle ______ des croissants pour la classe ce soir.",
+        "conjugated_verb": {
+          "verb": "achètera",
+          "subject_pronoun": "she"
+        }
+      }
+    ]
   }
 ]
