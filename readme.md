@@ -43,7 +43,7 @@ $ python3 server.py
 ## Spotify integration
 
 In order to return results from Spotify's Search API, you will need your own client ID and secret.
-You can create yours via this [link](https://developer.spotify.com/documentation/general/guides/app-settings/).
+You can find instructions on how to generate your own via this [link](https://developer.spotify.com/documentation/general/guides/app-settings/).
 
 After you've generated your own ID and secret, you will need to create a config file to include them.
 You should then be able to retreive results from Spotify.
