@@ -16,11 +16,12 @@ body {
 }
 
 .card-container {
-  background-color: #92b9bd;
+  background-color: #f4e6db;
 }
 
 .info-container {
   background-color: #fff;
+  border-radius: 10px;
 }
 
 a {
@@ -32,6 +33,6 @@ a:hover {
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
