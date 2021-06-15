@@ -1,6 +1,6 @@
 
 
-from flask import (Flask, render_template, request, flash, session,
+from flask import (Flask, render_template, request, session,
                    redirect, jsonify, make_response)
 from flask_api import status
 from model import connect_to_db
