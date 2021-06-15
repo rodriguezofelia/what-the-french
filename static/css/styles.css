@@ -1,9 +1,13 @@
+body {
+  background-color: #f4e6db;
+}
+
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-  background-color: #92b9bd;
+  background-color: #6699cc;
   border: none;
 }
 
@@ -25,4 +29,9 @@ a {
 
 a:hover {
   color: blue;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
 }
