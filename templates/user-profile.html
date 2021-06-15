@@ -1,45 +1,49 @@
 {% extends 'base.html' %} {% block title%} WHAT THE FRENCH {% endblock %} {%
 block body%}
-<div class="d-flex justify-content-center py-5 mx-3">
+<div class="d-flex justify-content-center pt-5 mx-3">
   <h1>Hi, {{ user.first_name }} {{ user.last_name }}!</h1>
 </div>
-<div class="d-flex justify-content-center py-3">
-  <h3>All Grades</h3>
-</div>
-
-{% if quiz_names %}
-<div class="d-flex justify-content-center py-3">
-  <p>
-    Below you will find a list of all the quizzes you've taken, along with the
-    respective grade.
-  </p>
-</div>
-<div>
-  <div class="d-flex justify-content-center py-3">
-    <div class="px-5 mx-5">
-      <h3>Quiz Name</h3>
+<div class="d-flex align-items-center flex-column p-5 card-container">
+  <div
+    class="d-flex justify-content-center align-items-center flex-column info-container"
+  >
+    <div class="d-flex justify-content-center py-3">
+      <h3>All Grades</h3>
     </div>
-    <div class="px-5 mx-5">
-      <h3>Score</h3>
+
+    {% if quiz_names %}
+    <div class="d-flex justify-content-center px-5 py-3">
+      <p>
+        Below you will find a list of all the quizzes you've taken, along with
+        the respective grade.
+      </p>
+    </div>
+    <div class="d-flex justify-content-center py-3">
+      <div class="px-5 mx-5">
+        <h3>Quiz Name</h3>
+      </div>
+      <div class="px-5 mx-5">
+        <h3>Score</h3>
+      </div>
+    </div>
+
+    {% for quiz in quiz_names %}
+    <div class="d-flex justify-content-center">
+      <div class="px-1 mx-4">
+        <p>{{ quiz[0] }}</p>
+      </div>
+      <div class="px-5 mx-5">
+        <p>{{ all_grades[loop.index - 1].grade }}%</p>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <div class="d-flex justify-content-center px-5">
+      <p>
+        Oh no, it looks like you haven't taken any quizzes. Check out the
+        <a href="/verb-conjugation">verb conjugation</a> section to take your
+        first one!
+      </p>
     </div>
   </div>
-
-  {% for quiz in quiz_names %}
-  <div class="d-flex justify-content-center">
-    <div class="px-1 mx-4">
-      <p>{{ quiz[0] }}</p>
-    </div>
-    <div class="px-5 mx-5">
-      <p>{{ all_grades[loop.index - 1].grade }}%</p>
-    </div>
-  </div>
-</div>
-{% endfor %} {% else %}
-<div class="d-flex justify-content-center px-5">
-  <p>
-    Oh no, it looks like you haven't taken any quizzes. Check out the
-    <a href="/verb-conjugation">verb conjugation</a> section to take your first
-    one!
-  </p>
 </div>
 {% endif %} {% endblock%}
