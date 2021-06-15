@@ -10,7 +10,13 @@ block body%}
     <form>
       <div class="pt-2 my-2">
         <label for="email"></label>
-        <input type="text" id="email" placeholder="Email" name="email" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          name="email"
+          required
+        />
       </div>
       <div class="my-2">
         <label for="password"></label>
@@ -19,6 +25,7 @@ block body%}
           id="password"
           placeholder="Password"
           name="password"
+          required
         />
       </div>
       <div>

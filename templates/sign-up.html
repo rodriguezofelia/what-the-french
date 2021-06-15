@@ -15,6 +15,7 @@ block body%}
           id="first-name"
           placeholder="First Name"
           name="first_name"
+          required
         />
       </div>
       <div class="my-2">
@@ -24,11 +25,18 @@ block body%}
           id="last-name"
           placeholder="Last Name"
           name="last_name"
+          required
         />
       </div>
       <div class="my-2">
         <label for="email"></label>
-        <input type="text" id="email" placeholder="Email" name="email" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          name="email"
+          required
+        />
         <span id="email-error-msg"></span>
       </div>
       <div class="my-2">
@@ -38,6 +46,7 @@ block body%}
           id="password"
           placeholder="Password"
           name="password"
+          required
         />
       </div>
       <div
