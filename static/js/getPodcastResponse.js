@@ -19,7 +19,7 @@ const showResponse = (response) => {
       ${item.description ? `<div>Description: ${item.description}</div>` : ""}
       <div>Interested in listening? <a href='${
         item.external_urls.spotify
-      }'>Go to podcast playlist.</a></div>
+      }' target="_blank">Go to podcast playlist.</a></div>
     </div>
     </div>`;
   });
